@@ -1,0 +1,16 @@
+.task {
+  /* Sample  */
+  /* border: 1px solid black; */
+  display: flex;
+  width: 100%;
+  /* margin: 5px; */
+  align-items: center;
+}
+
+.removeButton{
+  opacity: 0; 
+}
+
+.removeButton:hover {
+  opacity: 1; 
+}
