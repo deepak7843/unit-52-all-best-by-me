@@ -1,0 +1,9 @@
+Navbar
+    Location
+    Icon + Text
+Offers
+     Offer
+Filters
+     Filter
+Restaurants
+      Restaurant
