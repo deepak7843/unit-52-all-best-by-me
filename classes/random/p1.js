@@ -47,14 +47,36 @@
 
 // //////////////console.log("*************************************************************************************************************************************");
 
-let {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}
-let {d,e} = {a: 10, b: 20, c: 30, d: 40}
-console.log("d---", d);
-console.log("e---", e);
+// let {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}
+// let {d,e} = {a: 10, b: 20, c: 30, d: 40}
+// console.log("d---", d);
+// console.log("e---", e);
 
-// a; // 10
-// b; // 20
-// rest; // { c: 30, d: 40 }
-console.log(a);
-console.log(b);
-console.log("rest--", rest);
+// // a; // 10
+// // b; // 20
+// // rest; // { c: 30, d: 40 }
+// console.log(a);
+// console.log(b);
+// console.log("rest--", rest);
+
+
+// //////////////console.log("*************************************************************************************************************************************");
+
+
+// let s1="4" ,s2="",  n=10 , ob={} , ar=[]
+
+// if(s2 && n> 0){
+//     console.log("done");
+// } else{
+//     console.log(" not");
+// }
+
+
+// conditional (note: evaluation to false prints false here!)
+console.log('' ? true : false); // zero length     => false
+
+// comparisons
+console.log('' == true);        // +0 === 1        => false
+console.log('' == false);       // +0 === +0       => true
+console.log('' === true);       // different types => false
+console.log('' === false);      // different types => false

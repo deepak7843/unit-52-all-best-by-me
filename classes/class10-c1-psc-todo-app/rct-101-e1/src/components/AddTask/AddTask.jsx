@@ -7,6 +7,8 @@ const AddTask = ( {addTask} ) => {
 
    const handleClick = ( ) => {
      console.log("newTask-----**", newTask);
+
+     console.log("addTask--", addTask);
      
      addTask(newTask)
      setNewTask("")
@@ -16,10 +18,15 @@ const AddTask = ( {addTask} ) => {
   return (
     <div className={styles.todoForm}>
       <input data-cy="add-task-input" 
-      value={newTask}
+
+      
+
       onChange={({target}) => {
-      console.log(target);
+      console.log("target---", target);
       setNewTask(target.value) } }
+
+      value={newTask}
+
 
       type="text" 
       // placeholder="Add task..."

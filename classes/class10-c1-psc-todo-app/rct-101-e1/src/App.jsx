@@ -1,20 +1,16 @@
 import React from "react";
-import TaskApp from "./components/TaskApp"
+import TaskApp from "./components/TaskApp";
 
 function App() {
   return (
+    <div>
+      {/* Code Here */}
 
-  
-  <div>{/* Code Here */}  
+      {/* console.log("************************************************************************************") */}
 
-{/* console.log("************************************************************************************") */}
-
-  
-  <TaskApp/>
-  
-  </div>
-
-  )
+      <TaskApp />
+    </div>
+  );
 }
 
 export default App;

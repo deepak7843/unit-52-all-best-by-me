@@ -1,95 +1,98 @@
-import React, {useState} from "react";
-import {v4} from 'uuid';
+import React, { useState } from "react";
+import { v4 } from "uuid";
 
 // import {TaskHeader} from "./TaskHeader/TaskHeader"
-import TaskHeader from "./TaskHeader/TaskHeader"
-
-
-
+import TaskHeader from "./TaskHeader/TaskHeader";
 
 // import {AddTask} from "./AddTask/AddTask"
-import AddTask from "./AddTask/AddTask"
-
+import AddTask from "./AddTask/AddTask";
 
 // import {Tasks} from "./Tasks/Tasks"
-import Tasks from "./Tasks/Tasks"
+import Tasks from "./Tasks/Tasks";
 
-import taskData from "../data/tasks.json"
+import taskData from "../data/tasks.json";
 
 import styles from "./taskApp.module.css";
 
 const TaskApp = () => {
-  const [tasks, setTasks] = useState(taskData)
+  const [tasks, setTasks] = useState(taskData);
 
-    // console.log(tasks);
+  console.log("tasks----" , tasks);
 
-    const addTask = (newTask) => {
-      // newTask= ""
+  // const addTask = (newTask) => {
 
-     ////  .some/.filter/.find ---->> anyone can use
+    // const addTask = function (newTask)  {
 
-      let isTaskPresent = tasks.some( (task) => task.text === newTask )
-      if(newTask && !isTaskPresent) {
+    function addTask(newTask)  {
 
-        const newTaskObj = {
-           id: v4(),
-           text: newTask,
-           done: false,
-           count: 1
-        }
-        setTasks( [ ...tasks, newTaskObj ] )
+
+    // newTask= ""
+
+    ////  .some/.filter/.find ---->> anyone can use
+
+    let isTaskPresent = tasks.some((task) => task.text === newTask);
+
+    console.log("isTaskPresent--" , isTaskPresent );
+
+    // console.log("!isTaskPresent--" , !isTaskPresent );
+
+  //  console.log("newTask---", newTask);
+
+    if (newTask.length && !isTaskPresent) {
+      const newTaskObj = {
+        id: v4(),
+        text: newTask,
+        done: false,
+        count: 1,
+      };
+      console.log("newTaskObj--" , newTaskObj);
+      setTasks([...tasks, newTaskObj]);
+    }
+  };
+
+  // console.log("************************************************************************************")
+  const handleUpdateTask = (updatedTask) => {
+    let newTasks = tasks.reduce((acc, curr) => {
+      if (curr.id === updatedTask.id) {
+        acc.push(updatedTask);
+      } else {
+        acc.push(curr);
       }
-    }
+      return acc;
+    }, []);
 
-    // console.log("************************************************************************************")
-    const handleUpdateTask= (updatedTask ) => {
-       
-      let newTasks = tasks.reduce((acc, curr) => {
-        if(curr.id=== updatedTask.id) {
-          acc.push(updatedTask)
-        } else {
-          acc.push(curr)
-        }
-        return acc
-      }, [] )  
+    console.log("newTasks----**", newTasks);
+    setTasks([...newTasks]);
+  };
+  // console.log("tasks-----/////----", tasks);
 
-      console.log("newTasks----**", newTasks);
-      setTasks([...newTasks])
-    }
-  console.log("tasks-----/////----", tasks);
-
-
-  const handleRemoveTask= (taskId) => {   
+  const handleRemoveTask = (taskId) => {
     console.log("Removed_taskId---", taskId);
 
-    let newTasks= tasks.filter(task => task.id !== taskId);
+    let newTasks = tasks.filter((task) => task.id !== taskId);
 
     // console.log("newTasks---+++99", newTasks);
 
-    setTasks(newTasks)
-  }  
+    setTasks(newTasks);
+  };
 
   // NOTE: do not delete `data-cy` key value pair
   return (
     <div data-cy="task-app" className={styles.main}>
+      <div className={styles.taskApp}>
+        {/* Header */}
+        {/* Add Task */}
+        {/* Tasks */}
+        <TaskHeader tasks={tasks} />
 
-    <div className={styles.taskApp} >  
+        <AddTask addTask={addTask} />
 
-      {/* Header */}
-      {/* Add Task */}
-      {/* Tasks */}
-       <TaskHeader tasks={tasks}  />
-
-       <AddTask addTask= {addTask} />
-
-       <Tasks tasks={tasks}
-
-         handleUpdateTask= {handleUpdateTask} 
-         
-         handleRemoveTask= {handleRemoveTask} />
-
+        <Tasks
+          tasks={tasks}
+          handleUpdateTask={handleUpdateTask}
+          handleRemoveTask={handleRemoveTask}
+        />
       </div>
-
     </div>
   );
 };
