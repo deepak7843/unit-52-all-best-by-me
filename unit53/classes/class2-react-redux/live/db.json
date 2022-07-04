@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "buy milk",
+      "status": false
+    },
+    {
+      "id": "d4764091-3e31-4a3b-9592-4d9ba82bcd83",
+      "title": "dsd",
+      "status": false
+    },
+    {
+      "id": "8e8b1ff5-0163-4673-80ce-cfdb47832c52",
+      "title": "plo",
+      "status": false
+    }
+  ]
+}

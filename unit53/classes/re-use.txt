@@ -1,0 +1,6 @@
+ "server": "json-server --watch db.json --port 8080",
+
+
+npx create-react-app live
+
+ npm i axios json-server redux react-redux redux-thunk react-router-dom styled-components
