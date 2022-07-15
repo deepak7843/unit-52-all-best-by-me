@@ -1,0 +1,84 @@
+.btn {
+    background-color: white;
+
+    color: black;
+    border-radius: 6px;
+    cursor: pointer;
+    /* size: 200px; */
+    font-size: 20px;
+  }
+  
+  .red {
+    background-color: crimson;
+    color: black;
+
+  }
+
+  .yellow{
+    background-color: yellow;
+    color: black;
+  }
+
+  .orange{
+    background-color: orange;
+    color: black;
+  }
+  
+  .green {
+    background-color: green;
+    color: black;
+  }
+  
+  /* .bordered {
+    border: 1px solid black;
+  } */
+
+  .solid{
+    /* background-color: green ; */
+    border: none;
+
+
+  }
+  
+  .ghost {
+        background-color: white ;
+
+    border: none;
+  }
+
+  .ghost:hover{
+    background-color: red ;
+
+    /* color: white; */
+  }
+
+  .outline{
+    background-color: white ;
+
+  }
+
+  .outline:hover{
+    background-color: red ;
+
+    /* color: white; */
+  }
+
+  /* ///**************** */
+
+  /* .md{
+    
+  } */
+
+  .sm{
+    font-size: 15px;
+  }
+  
+  .lg{
+    font-size: 25px;
+
+  }
+
+  .xl{
+    font-size: 30px;
+
+  }

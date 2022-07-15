@@ -1,0 +1,22 @@
+.btn {
+  color: whitesmoke;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.red {
+  background-color: crimson;
+}
+
+.green {
+  background-color: aquamarine;
+  color: black;
+}
+
+.bordered {
+  border: 1px solid black;
+}
+
+.ghost {
+  border: none;
+}
