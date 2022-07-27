@@ -1,0 +1,28 @@
+{
+  "countries": [
+    {
+      "id": 7,
+      "country": "Poland",
+      "city": "Warszawa",
+      "population": 934852
+    },
+    {
+      "id": 8,
+      "country": "Russian Federation",
+      "city": "Moscow",
+      "population": 569874
+    },
+    {
+      "id": 9,
+      "country": "Saudi Arabia",
+      "city": "Riyadh",
+      "population": 203843
+    },
+    {
+      "id": 10,
+      "country": "South Korea",
+      "city": "Seoul",
+      "population": 456083
+    }
+  ]
+}
