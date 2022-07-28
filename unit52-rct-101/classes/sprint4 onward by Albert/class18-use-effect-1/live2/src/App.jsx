@@ -72,13 +72,14 @@ import Chat from "./components/Github/Chat";
 
 
 export default function App() {
-  const [click, setClick] = useState(0);
-  const [count, setCount] = useState(0);
+  // const [click, setClick] = useState(0);
+  // const [count, setCount] = useState(0);
   const [show, setShow] = useState(true);
 
 
   // useEffect
-  useEffect(() => {}, [click]);
+  // useEffect(() => {}, [click]);
+
   return (
     <div className="App">
        <h1>class18-use-effect-1---Albert sir</h1>
@@ -93,7 +94,7 @@ export default function App() {
       {/* <Counter initialTime={10} /> */}
       {/* <Counter /> */}
 
-      {/* <Github /> */}
+      <Github />
       {/* <h1>{click}</h1>
 
       <button onClick={() => setClick(click + 1)}>CLICK ME</button>
