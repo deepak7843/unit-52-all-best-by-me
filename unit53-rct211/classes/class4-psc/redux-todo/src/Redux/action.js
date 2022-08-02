@@ -53,6 +53,20 @@ const removeTodoFailure = () => {
   return { type: types.REMOVE_TODO_FAILURE };
 };
 
+//// ***********************/////
+
+const editTodoRequest = () => {
+  return { type: types.EDIT_TODO_REQUEST };
+};
+
+const editTodoSuccess = (payload) => {
+  return { type: types.EDIT_TODO_SUCCESS, payload };
+};
+
+const editTodoFailure = () => {
+  return { type: types.EDIT_TODO_FAILURE };
+};
+
 export {
   getTodoListsFailure,
   getTodoListsRequest,
@@ -63,8 +77,10 @@ export {
   toggleTodoFailure,
   toggleTodoRequest,
   toggleTodoSuccess,
-  
   removeTodoFailure,
   removeTodoRequest,
   removeTodoSuccess,
+  editTodoFailure,
+  editTodoRequest,
+  editTodoSuccess,
 };

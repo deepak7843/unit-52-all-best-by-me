@@ -16,6 +16,7 @@ import {
 
 const SingleTodo = () => {
   const todos = useSelector((state) => state.todos);
+
   const dispatch = useDispatch();
   const { id } = useParams();
   const navigate= useNavigate()
@@ -35,7 +36,10 @@ const SingleTodo = () => {
     dispatch(toggleTodoRequest());
     axios
       .patch(`/todos/${id}`, { status: newStatus })
-      .then((r) => dispatch(toggleTodoSuccess(r.data)))
+      .then((r) =>{
+        console.log("r---", r);
+        dispatch(toggleTodoSuccess(r.data))}
+      )
       .catch((e) => dispatch(toggleTodoFailure(e)));
   };
 
@@ -52,6 +56,7 @@ const SingleTodo = () => {
 
   useEffect(() => {
     let currentTodo = todos.find((item) => item.id === Number(id));
+    
     currentTodo && setCurrentTodo(currentTodo);
   }, [todos, id]);
 

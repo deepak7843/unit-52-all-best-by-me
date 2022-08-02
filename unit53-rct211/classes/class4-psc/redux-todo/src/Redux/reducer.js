@@ -7,6 +7,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+  console.log("action----", action);
   const { type, payload } = action;
   switch (type) {
     
@@ -20,7 +21,8 @@ const reducer = (state = initialState, action) => {
     case types.GET_TODO_LISTS_SUCCESS:
       return {
         ...state,
-        todos: payload,
+        // todos: payload,
+        todos: [...payload],
         isLoading: false,
         isError: false,
       };
@@ -111,6 +113,34 @@ const reducer = (state = initialState, action) => {
         isError: true,
       };
 
+
+          //////// ************************************/////
+
+    case types.EDIT_TODO_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
+
+    case types.EDIT_TODO_SUCCESS:
+      console.log("payload--", payload);
+      // const leftTodos = state.todos.filter((item) => item.id !== payload);
+      let todos_after_edit = [...state.todos, payload];
+
+      return {
+        ...state,
+        todos: todos_after_edit,
+        isLoading: false,
+        isError: false,
+      };
+
+    case types.EDIT_TODO_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
        
     default:
       return state;

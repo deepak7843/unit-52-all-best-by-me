@@ -1,0 +1,15 @@
+
+ Redux folder ke andar 
+   App , Auth,  store.js 
+ke alawa baki sari file
+  aab class3 ke kam ki nahi hai...
+
+  but sir ne pahle waise hi kia tha....  bad me separate kar dia App & Auth me....
+
+
+
+
+
+
+ class1 ke code se class3 ka code kia hu 
+ 

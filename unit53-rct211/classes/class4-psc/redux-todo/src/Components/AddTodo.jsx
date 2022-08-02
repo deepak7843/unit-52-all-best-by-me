@@ -4,6 +4,8 @@ import {useDispatch } from "react-redux"
 import { addTodoFailure, addTodoRequest, addTodoSuccess } from '../Redux/action'
 import axios from 'axios'
 
+// dispatch(addTodoSuccess(r.data)) 
+
 const AddTodo=() => {
    const dispatch = useDispatch();
    const [todo, setTodo] = useState("")
@@ -13,7 +15,12 @@ const AddTodo=() => {
 
       axios
        .post("/todos", payload)
-       .then ((r)=> dispatch(addTodoSuccess(r.data)))
+       .then ((r)=> {
+         console.log("r---", r);
+        dispatch(addTodoSuccess(r.data)) 
+       }
+       
+       )
        .catch((e) => dispatch(addTodoFailure(e)))
     }
 
