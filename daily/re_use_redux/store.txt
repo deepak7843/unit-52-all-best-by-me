@@ -1,0 +1,56 @@
+import { legacy_createStore } from "redux";
+import reducer from "./reducer"
+
+const store = legacy_createStore(reducer)
+
+export {store}
+
+// ******************************************************************************************************************* *************************************************************************************************************************************
+
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()   
+  )
+  
+
+  /////  1-44-48   1-45-3 (class3 redux config-unit53)
+  ///// line 12,, window.__REDUX_DEVTOOLS_EXTENSION__&&  .......     ------>>>>> for using redux dev tool in Browser inspect
+
+
+// ******************************************************************************************************************* *************************************************************************************************************************************
+
+
+
+import { legacy_createStore , applyMiddleware, combineReducers , compose} from "redux";
+import thunk from "redux-thunk"
+import { reducer as AppReducer } from "./AppReducer/reducer";
+import { reducer as AuthReducer } from "./AuthReducer/reducer";
+
+
+//////***************** */
+/////************************************************* */
+
+
+const composeEnhancers =
+  typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        // Specify extension’s options like name, actionsDenylist, actionsCreators, serialize...
+      })
+    : compose;
+
+
+/////********************** */
+/////************************************************* */
+
+
+const rootReducer = combineReducers({AppReducer, AuthReducer })
+
+
+const store=legacy_createStore(
+  rootReducer,
+  
+  composeEnhancers(applyMiddleware(thunk))
+);
+
+
+export { store }; 

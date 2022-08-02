@@ -1,0 +1,19 @@
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+
+import Login from "./Login";
+import Signup from "./Signup";
+import Hpomepage from "./Hpomepage";
+
+const MainRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Hpomepage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+
+    </Routes>
+  );
+};
+
+export default MainRoutes;
