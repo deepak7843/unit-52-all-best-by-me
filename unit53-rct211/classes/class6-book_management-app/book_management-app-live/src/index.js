@@ -5,19 +5,22 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
-import {BrowserRouter} from "react-router-dom"
-import axios from "axios"
+import { BrowserRouter } from "react-router-dom";
+import axios from "axios";
 
-axios.defaults.baseURL= "http://localhost:8080"
+axios.defaults.baseURL = "http://localhost:8085";
 // axios.defaults.headers.post["Content-Type"] = "application/json";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </BrowserRouter>
+  // <React.StrictMode>
+    <BrowserRouter>
+      {/* ////// 21-17 */}
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  // {/* </React.StrictMode> */}
 );
 
 // If you want to start measuring performance in your app, pass a function

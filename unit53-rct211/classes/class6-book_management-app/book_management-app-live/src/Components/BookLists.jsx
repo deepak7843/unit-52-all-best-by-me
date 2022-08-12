@@ -13,7 +13,7 @@ const BookLists = ({ books }) => {
             <BookCardWrapper key={singleBook.id}>
               <BookCard bookData={singleBook} />
             </BookCardWrapper>
-          );
+          );    
         })}
     </>
   );
