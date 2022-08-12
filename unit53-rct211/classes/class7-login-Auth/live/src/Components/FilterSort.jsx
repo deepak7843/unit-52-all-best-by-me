@@ -7,9 +7,11 @@ const FilterSort = () => {
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const urlCategory = searchParams.getAll("category");
+  // const urlCategory = searchParams.getAll("category");
+  // const urlCategory = searchParams.getAll("dsd");
+  const urlCategory = searchParams.getAll("cat");
   const urlSort = searchParams.get("sortBy");
-  //   console.log("urlCategory--", urlCategory);
+    console.log("urlCategory--", urlCategory);
   //   console.log("urlSort--", urlSort);
 
   const [category, setCategory] = useState(urlCategory || []);
@@ -82,7 +84,9 @@ const FilterSort = () => {
   useEffect(() => {
     if (category || sortBy ) {
       let params= {}
-      category && (params.category = category)
+      // category && (params.category = category)
+      // category && (params.dsd = category)
+      category && (params.cat = category)
       sortBy && (params.sortBy = sortBy)
       setSearchParams(params)
     }

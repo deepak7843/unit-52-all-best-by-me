@@ -3,12 +3,13 @@ import * as types from "./actionTypes";
 
 const initialState = {
     isAuth:false,
+    // isAuth:true,
     token:"",
     isLoading:false,
     isError:false
 }
 const reducer = (state = initialState, action) => {
-    const { type, payload }=action
+    const { type, payload }=action 
     switch (type) {
         case types.USER_LOGIN_REQUEST:
             return { 
@@ -36,5 +37,11 @@ const reducer = (state = initialState, action) => {
         default:
             return state
     }
+
+
+
+
+
+    
 }
 export { reducer}

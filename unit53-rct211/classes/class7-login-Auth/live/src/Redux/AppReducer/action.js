@@ -38,4 +38,20 @@ import axios from "axios";
       });
   };
 
-  export {getBooks}
+
+
+  /////*** */
+  /////*** */
+  /////*** */
+
+  // const updateBookRecord= (id,payload) => (dispatch)=> {
+  //   dispatch({ type: types.UPDATE_BOOK_RECORD_REQUEST})
+
+  //   return axios
+  //     .patch(`http://localhost:8080/books/${id}`, payload)
+  //     .then((r)=> dispatch({ type: types.UPDATE_BOOK_RECORD_SUCCESS}))
+  //     .catch((e)=> dispatch({ type: types.UPDATE_BOOK_RECORD_FAILURE}))
+  // }
+
+  export {getBooks }
+  // export {getBooks , updateBookRecord}

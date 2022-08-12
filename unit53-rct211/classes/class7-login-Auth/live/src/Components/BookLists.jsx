@@ -13,24 +13,34 @@ const BookLists = () => {
   const books = useSelector((state) => state.AppReducer.books);
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
-  const location = useLocation();
+
+  
+  const location = useLocation(); /// 29-37
+  console.log("location--", location);
 
   // console.log("books--", books);
-  useEffect(() => {
-    if (books.length === 0 || location.search) {
-      const sortBy = searchParams.get("sortBy");
-      const getBooksParams = {
-        params: {
-          category: searchParams.getAll("category"),
-          _sort: "release_year",
-          _order: sortBy,
-        },
-      };
-      // console.log("getBooksParams--", getBooksParams);
+  useEffect(
+    () => {
+      // if (books.length === 0 ) {
+      if (books.length === 0 || location.search) {
+        const sortBy = searchParams.get("sortBy"); //// 27-33
+        // const getBooksParams = {
+        let getBooksParams = {
+          params: {
+            // category: searchParams.getAll("category"),
+            category: searchParams.getAll("cat"),
+            _sort: sortBy && "release_year",
+            _order: sortBy,
+          },
+        };
+        console.log("getBooksParams--", getBooksParams); ///// 49-45
 
-      dispatch(getBooks(getBooksParams));
-    }
-  }, [location.search]);
+        dispatch(getBooks(getBooksParams));
+      }
+    },
+    //  [books.length, dispatch, location.search, searchParams]
+    [location.search]
+  );
 
   // console.log(location);
 

@@ -6,15 +6,18 @@ import { getBooks } from "../Redux/AppReducer/action";
 
 const SingleBook = () => {
   // const params = useParams();
-  // console.log("params--", params);
+  // console.log("params--", params); //// 1-7-30
+  // console.log("useParams()-----", useParams());
   const { id } = useParams();
 
   const dispatch = useDispatch();
   const books = useSelector((state) => state.AppReducer.books);
-  console.log("books--", books);
+  // console.log("books--", books);
   const [currentBook, setCurrentBook] = useState({});
 
-  useEffect(() => {
+  useEffect(() => {  //////// 1-13-18
+    //// 1-23-47  -------->>>> 
+    //// For  --> on refresh , or on a new tab, if we don,t have the books data in our redux store
     if (books?.length === 0) {
       dispatch(getBooks());
     }
@@ -22,13 +25,15 @@ const SingleBook = () => {
 
   useEffect(() => {
     if (id) {
+      // console.log(id);
       const temp = books?.find((book) => book.id === Number(id));
-      temp && setCurrentBook(temp);
+      // console.log("temp--", temp);
+      temp && setCurrentBook(temp); /////// 1-9-17
       // setCurrentBook(temp);
     }
   }, [books, id]);
 
-  console.log("currentBook--", currentBook);
+  // console.log("currentBook--", currentBook);
 
   return (
     <div>

@@ -24,9 +24,9 @@
       "author": "typicode",
       "no_of_chapters": 6,
       "cover_photo": "",
-      "book_name": "Full-Stack Web Development",
+      "book_name": "dsd",
       "category": "Science_Fiction",
-      "release_year": 2020,
+      "release_year": "1998",
       "chapters": [
         {
           "name": "HTML",
@@ -36,7 +36,9 @@
           "name": "css",
           "pages": 20
         }
-      ]
+      ],
+      "name": "dsd",
+      "year": "1998"
     },
     {
       "id": 3,
@@ -121,9 +123,7 @@
       "cover_photo": "",
       "book_name": "Full-Stack Web Development",
       "category": "Novel",
-      "release_year": 2016
-      
-      ,
+      "release_year": 2016,
       "chapters": [
         {
           "name": "HTML",
@@ -191,6 +191,6 @@
           "pages": 20
         }
       ]
-    }   
+    }
   ]
 }
