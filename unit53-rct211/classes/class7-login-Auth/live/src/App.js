@@ -5,7 +5,7 @@ import MainRoutes from "./Pages/MainRoutes";
 function App() {
   return (
     <div className="App">
-      <h1>class7-login</h1>
+      <h1>class7-dsd-login</h1>
       <Navbar />
 
       <MainRoutes/>
