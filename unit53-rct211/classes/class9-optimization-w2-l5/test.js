@@ -12,6 +12,8 @@ const fib = memoFunc((n) => {
   return fib(n - 1) + fib(n - 2);
 });
 
+console.log("dsd");
+
 console.time("f1");
 console.log(fib(43));
 console.timeEnd("f1");
