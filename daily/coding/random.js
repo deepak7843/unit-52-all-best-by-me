@@ -20,7 +20,28 @@
 
 ////////***************************************************
 
-const sum= a => b => a+b
-console.log(sum)
+// const sum= a => b => a+b
+// console.log(sum)
 
-console.log(sum(2)(3));
+// console.log(sum(2)(3));
+
+
+
+const {log, warn , error} = console
+
+// // console.log(b);
+// console.log(log);
+
+// log(67)
+
+
+const obj = { a: 1, b: { c: 2 } };
+// const { a, b: { c: d } } = obj;
+// const { a, b: { c } } = obj;
+const { a,b } = obj;
+// Two variables are bound: `a` and `d`
+
+// log(a"\n" b)
+
+console.log("\n");
+console.log(  "\n");

@@ -10,6 +10,6 @@ const TestComponent = () => {
       <div> {ready3 ? "Ready3" : "Not-Ready3"} </div>
     </div>
   );
-};
+}; 
 
 export default TestComponent;

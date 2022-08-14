@@ -1,7 +1,10 @@
 // import { useEffect, useState } from "react";
 
+// /////47-10
 
 // const useTimeout= ()=>{
+
+//   console.log(useState);
 
 //     const [ready, setReady] = useState(false);
 
@@ -9,38 +12,51 @@
 //       let timer = setTimeout(() => {
 //         setReady(true);
 //       }, 3000);
-  
+
 //       return () => {
 //         clearTimeout(timer);
 //       };
 //     }, []);
+//     // console.log(ready);
 
 //     return ready
 // }
 
 //  export {useTimeout}
 
- ////////////**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************
-
+////////////*****************************  1-3-50 *********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************
 
 import { useEffect, useState } from "react";
 
+const useTimeout = (delay) => {
+  const [ready, setReady] = useState(false);
 
-const useTimeout= (delay)=>{
+  useEffect(() => {
+    // setTimeout(() => {
+    //   console.log("run");
+    //   setReady(true);
+    // }, delay);
+    /////
+    /////
+    /////
+    ////
 
-    const [ready, setReady] = useState(false);
+    let timer = setTimeout(
+      () => {
+      setReady(true);
+    }, delay);   
 
-    useEffect(() => {
-      let timer = setTimeout(() => {
-        setReady(true);
-      }, delay);
-  
-      return () => {
-        clearTimeout(timer);
-      };
-    }, [delay]);
+    // console.log(timer);
 
-    return ready
-}
+    return () => {
+      clearTimeout(timer);
+    };
 
- export {useTimeout}
+    //////
+    //////
+  }, [delay]);
+
+  return ready;
+};
+
+export { useTimeout };
