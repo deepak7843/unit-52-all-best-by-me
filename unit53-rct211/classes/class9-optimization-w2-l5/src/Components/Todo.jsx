@@ -23,59 +23,96 @@ const Todo = () => {
     setCurrentTodo("");
   };
 
-  //   const handleToggle = useCallback(
-  //     (id) => {
-  //       let newTodoList = todos.map((item) =>
-  //         item.id === id ? { ...item, status: !item.status } : item
-  //       );
-  //       setTodos(newTodoList);
-  //     },
-  //     [todos]
-  //   );
+  ///////////////////////////////////**************************************************
+  ////////
+  ////////
+  ////////
+  ////////
 
-    const handleToggle = useCallback((id) => {
-      setTodos((prev) => {
-        prev.map((item) =>
+  // const handleToggle = (id) => {
+  //   let newTodoList = todos.map((item) =>
+  //     item.id === id ? { ...item, status: !item.status } : item
+  //   );
+  //   setTodos(newTodoList);
+  // };
+
+  // const handleToggle = useCallback(  //// 1-52-50
+  //   (id) => {
+  //     let newTodoList = todos.map((item) =>
+  //       item.id === id ? { ...item, status: !item.status } : item
+  //     );
+  //     setTodos(newTodoList);
+  //   },
+  //   [todos]
+  // );
+
+  // const handleToggle = useCallback((id) => {
+  //   setTodos((prev) =>
+  //   //// 2-0-45
+  //     prev.map((item) =>
+  //       item.id === id ? { ...item, status: !item.status } : item
+  //     )
+  //   );
+  // }, []);
+
+  const handleToggle = useCallback((id) => {
+    setTodos((dsd) =>
+      //// 2-0-45
+      {
+        // console.log("toggled");  
+        return dsd.map((item) =>
           item.id === id ? { ...item, status: !item.status } : item
         );
-      });
-    }, []);
+      }
+    );
+  }, []);   
 
-//   const handleToggle = (id) => {
-//     setTodos ((prev) =>
-//       prev.map((item) =>
-//         item.id === id ? { ...item, status: !item.status } : item
-//       )
-//     );
-//   };
+  //   const handleToggle = (id) => {
+  //     setTodos ((prev) =>
+  //       prev.map((item) =>
+  //         item.id === id ? { ...item, status: !item.status } : item
+  //       )
+  //     );
+  //   };
 
+  ////////
+  ////////
+  ////////
+  ////////
   ///////////////////////////////////**************************************************
+  ////////
+  ////////
+  ////////
+  ////////
+  // const handleDelete = (id) => {
+  //   let newTodoList = todos.filter((item) => item.id !== id);
+  //   setTodos(newTodoList);
+  // };
 
-  //   const handleDelete = useCallback(
-  //     (id) => {
-  //       let newTodoList = todos.filter((item) => item.id !== id);
-  //       setTodos(newTodoList);
-  //     },
-  //     [todos]
-  //   );
-
-
+  // const handleDelete = useCallback(  ///// 1-53-17
+  //   (id) => {
+  //     let newTodoList = todos.filter((item) => item.id !== id);
+  //     setTodos(newTodoList);
+  //   },
+  //   [todos]
+  // );
 
   const handleDelete = useCallback((id) => {
+    ////// 2-1-45
     setTodos((prev) => prev.filter((item) => item.id !== id));
   }, []);
 
-
-// const handleDelete = (id) => {
-//     setTodos((prev) => prev.filter((item) => item.id !== id));
-//   };
+  // const handleDelete = (id) => {
+  //     setTodos((prev) => prev.filter((item) => item.id !== id));
+  //   };
 
   return (
     <div>
       <h1>Todo</h1>
       <input value={currentTodo} onChange={todoHandler} />
       <button onClick={handleAddTask}>ADD</button>
-      {todos.length &&
+      {/* ////// */}
+      {todos?.length &&
         todos.map((item) => (
           <TodoItem
             key={item.id}
