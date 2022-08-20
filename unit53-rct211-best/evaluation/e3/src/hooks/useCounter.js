@@ -1,3 +1,9 @@
+
+// export const useCounter = (init) => {};
+
+/////////******************   self ***********************************************************************************************************************************************************************************************
+
+
 import { useState } from "react";
 
 export const useCounter = (init) => {
@@ -10,8 +16,6 @@ export const useCounter = (init) => {
   const [min, setMin] = useState(init.minValue);
 
   const incCount = (el) => {
-
-
 
     if ((count < 13 && el === 3) || (el === 1 && count < 15)) {
       return setCount(count + el);
@@ -32,5 +36,9 @@ export const useCounter = (init) => {
     }
   };
 
-  return [count, incCount, decCount];
+    //   console.log("incCount--", incCount);
+    // console.log("decCount--", decCount);
+
+  // return [count, incCount, decCount];
+  return {count, incCount, decCount};
 };

@@ -1,0 +1,15 @@
+.fill{
+    object-fit: fill;
+}
+
+.cover{
+    object-fit: cover;
+}
+
+.image{
+    object-fit: none;
+}
+
+.contain{
+    object-fit: contain;
+}

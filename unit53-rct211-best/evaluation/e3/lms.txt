@@ -1,0 +1,43 @@
+RCT-211-B17-E3-EVALUATION
+Testing Objectives
+The user should be able to create his own custom hooks, that cover most of the edge-cases, related to its functionality.
+The user should be able to create his own custom React components. The components should function properly when the user passes the required props.
+Boilerplate:
+Zip file
+GitHub Link
+Part-1 : Custom Hooks
+Implement the following hook
+useCounter
+useCounter hook accepts 3 numbers, initialCount, minCount, maxCount:
+const { countValue, incCount, decCount } = useCounter({
+  initialCount: 10,
+  minCount: 5,
+  maxCount: 15,
+});
+Where countValue is the current value of the counter, and rest are functions
+incCount increments counter, incCount(2): increments by 2, incCount(5): increments by 5, etc. if not given, default is 1: incCount()
+decCount decrements counter, decCount(2): decrements by 2, decCount(5): decrements by 5, etc. if not given, default is 1: decCount()
+User should not be able to increment the count if it is more than or equal to the maxValue
+User should not be able to decrement the count if it is less than or equal to the minValue
+Part-2 : React Custom Components
+Create the following custom components in react
+Button:
+A custom button that accepts the following props and changes the default properties:
+colorScheme, size, variant
+colorScheme has following values:red, yellow, orange, green. The default value must be white, if colorScheme is not specified.
+size has the following values: sm, md, lg, xl. You can decide what the values are going to be for these sizes. The default value must be md if not given.
+variant has the following values: solid, ghost, and outline. Reference
+Reference inspiration
+Pagination:
+Simple Pagination component that accepts following props:
+total, selected, onPageChange
+total decides how many pages will be there. eg: <Pagination total={10}>
+selected decides which page is currently selected.
+onPageChange is a callback when user changes page number.
+Reference inspiration
+Inside this component there are prev and next buttons as well.
+eg: <Pagination total={5}> creates 7 boxes inside:
+[<][1][2][3][4][5][>]
+prev and next are disabled when there's no prev and next page available.
+Selected page must be highlighted with a blue border
+Hint: Pagination component will need one more PageCell component which represents one single box

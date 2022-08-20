@@ -7,9 +7,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>class11</h1>
+      <h1>class11-react pin -- otp</h1>
       <Pin
-        length={4}
+        length={5}
         setOtpHandler={(value) => {
           setOtp(value);
         }}

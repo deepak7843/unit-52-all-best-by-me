@@ -1,0 +1,38 @@
+.Input {
+  width: 500px;
+}
+
+.sm {
+  height: 32px;
+}
+
+.lg {
+  height: 48px;
+}
+
+.xs {
+  height: 24px;
+}
+.md {
+  height: 40px;
+}
+
+.outline {
+  border-radius: 12px;
+}
+
+.flushed {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid black;
+}
+
+.unstyled {
+  border: 0px;
+}
+
+.filled {
+  border-radius: 8px;
+  background-color: aliceblue;
+}

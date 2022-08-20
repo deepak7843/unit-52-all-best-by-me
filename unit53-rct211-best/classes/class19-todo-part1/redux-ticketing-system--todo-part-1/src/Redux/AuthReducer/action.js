@@ -6,8 +6,9 @@ const register = (payload) => (dispatch) => {
 console.log("payload--", payload);
 
   return axios
-    .post("https://masai-api-mocker.herokuapp.com/auth/register", payload)
+    // .post("https://masai-api-mocker.herokuapp.com/auth/register", payload)
     // .post("http://localhost:8080/auth/register", payload)
+    .post("https://reqres.in/api/login", payload)
 
     .then((r) => {
       dispatch({ type: types.REGISTER_SUCCESS, payload: r.data });
@@ -25,7 +26,8 @@ const login = (params) => (dispatch) => {
   dispatch({ type: types.LOGIN_REQUEST });
     return axios
     // .post("http://localhost:8080/auth/login" , params  )
-    .post("https://masai-api-mocker.herokuapp.com/auth/register" , params  )
+    // .post("https://masai-api-mocker.herokuapp.com/auth/register" , params  )
+    .post("https://reqres.in/api/login" , params  )
     .then((r)=>{
        dispatch({type: types.LOGIN_SUCCESS, payload: r.data.token })
     return types.LOGIN_SUCCESS
