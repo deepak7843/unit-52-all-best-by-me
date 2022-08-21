@@ -1,6 +1,8 @@
 const getLocalData=(key)=>{
     if(key){
         const data= localStorage.getItem(key)
+        // console.log(typeof(data));
+        // console.log(data);
         return data
     }
 }

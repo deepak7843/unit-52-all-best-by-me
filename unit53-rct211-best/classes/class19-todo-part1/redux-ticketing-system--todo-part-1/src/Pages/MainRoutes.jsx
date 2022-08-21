@@ -19,7 +19,7 @@ const MainRoutes = () => {
               <Sidebar />
               <Homepage />
             </Stack>
-          </ReqAuth>
+          </ReqAuth> 
         }
       />
       <Route path="/login" element={<Login />} />
