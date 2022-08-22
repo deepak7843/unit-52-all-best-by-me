@@ -62,7 +62,6 @@ export default function Login() {
           boxShadow={"lg"}
           p={8}
         >
-          
           <Stack spacing={4}>
             <FormControl id="username">
               <FormLabel>Username</FormLabel>

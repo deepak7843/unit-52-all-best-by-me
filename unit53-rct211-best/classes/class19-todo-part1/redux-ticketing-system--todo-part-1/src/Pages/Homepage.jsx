@@ -11,53 +11,62 @@ const Homepage = () => {
     dispatch(getTasks());
   }, [dispatch]);
 
-  useEffect(()=>{
-    if(tasks.length===0){
-      getTasksHandler()
+  useEffect(() => {
+    if (tasks.length === 0) {
+      getTasksHandler();
     }
-  } , [getTasksHandler, tasks.length] )
+  }, [getTasksHandler, tasks.length]);
 
   return (
     // <div>Homepage</div>
 
-    <Box border="3px solid green" width="100%">
+    <Box border="3px solid red" width="100%">
       <Flex justifyContent="space-around">
         {/* Todo */}
         <Box border="1px solid black" width="250px" height="95vh">
           <Box>
             <Text textAlign="center">TODO</Text>
           </Box>
-          {
-            tasks.length> 0 && tasks.filter((item) => item.task_status=== "todo" ).map((item)=>{
-              return <TaskCard key={item.id} {...item} colorScheme={"red"} />
-            } )
-          }
+          {tasks.length > 0 &&
+            tasks
+              .filter((item) => item.task_status === "todo")
+              .map((item) => {
+                return (
+                  <TaskCard key={item.id} {...item} colorScheme={"blue"} />
+                );
+              })}
         </Box>
-
-        {/* in-progress */}
+        {/* in-progress //////////////////////********** */}
+        {/* ///// */}
+        {/* ///// */}
         <Box border="1px solid black" width="250px" height="95vh">
           <Box>
             <Text textAlign="center">IN-PROGRESS</Text>
           </Box>
 
-          {
-            tasks.length> 0 && tasks.filter((item) => item.task_status=== "in-progress" ).map((item)=>{
-              return <TaskCard key={item.id} {...item} colorScheme={"yellow"} />
-            } )
-          }
+          {tasks.length > 0 &&
+            tasks
+              .filter((item) => item.task_status === "in-progress")
+              .map((item) => {
+                return (
+                  <TaskCard key={item.id} {...item} colorScheme={"yellow"} />
+                );
+              })}
         </Box>
-
-        {/* done */}
+        {/* done */} {/*  //////////////////////********** */}
+        {/* ///// */}
+        {/* ///// */}
         <Box border="1px solid black" width="250px" height="95vh">
           <Box>
             <Text textAlign="center">DONE</Text>
           </Box>
 
-          {
-            tasks.length> 0 && tasks.filter((item) => item.task_status=== "done" ).map((item)=>{
-              return <TaskCard key={item.id} {...item}  colorScheme="blue" />
-            } )
-          }
+          {tasks.length > 0 &&
+            tasks
+              .filter((item) => item.task_status === "done")
+              .map((item) => {
+                return <TaskCard key={item.id} {...item} colorScheme="blue" />;
+              })}
         </Box>
       </Flex>
     </Box>

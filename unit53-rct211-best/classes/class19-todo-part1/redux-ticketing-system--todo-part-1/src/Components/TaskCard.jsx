@@ -26,7 +26,15 @@ const TaskCard = ({
         </Stack>
       </Box>
       <Text> {description} </Text>
+      <hr style={{
+        // color:"red",
+      border: "3px solid black " }}  />
+      {/* <hr /> */}
+      {/* <hr /> */}
+      {/* <br /> */}
+      {/* <br /> */}
     </Box>
+     
   );
 };
 

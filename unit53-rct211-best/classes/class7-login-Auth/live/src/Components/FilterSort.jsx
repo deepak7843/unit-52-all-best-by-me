@@ -11,7 +11,7 @@ const FilterSort = () => {
   // const urlCategory = searchParams.getAll("dsd");
   const urlCategory = searchParams.getAll("cat");
   const urlSort = searchParams.get("sortBy");
-    console.log("urlCategory--", urlCategory);
+  console.log("urlCategory--", urlCategory);
   //   console.log("urlSort--", urlSort);
 
   const [category, setCategory] = useState(urlCategory || []);
@@ -40,12 +40,10 @@ const FilterSort = () => {
   //     setSearchParams({ category });
 
   //     // dispatch(getBooks({ params: { category } }));
-  //           /////in line-39  we are making api call 
+  //           /////in line-39  we are making api call
 
   //   }
   // }, [category, dispatch, setSearchParams]);
-
-
 
   // useEffect(() => {
   //   if (sortBy) {
@@ -66,32 +64,26 @@ const FilterSort = () => {
 
   //     //   setSearchParams({sortBy})
   //     setSearchParams(params);
-  
+
   //     // dispatch(getBooks(getBooksParams));
-  //     /////in line-60  we are making api call 
+  //     /////in line-60  we are making api call
   //   }
   // }, [sortBy, dispatch, setSearchParams, searchParams]);
-
-
 
   // console.log("category--", category);
   //   console.log("searchParams--", searchParams);
   //   console.log("sortBy--", sortBy);
 
-
-
-
   useEffect(() => {
-    if (category || sortBy ) {
-      let params= {}
+    if (category || sortBy) {
+      let params = {};
       // category && (params.category = category)
       // category && (params.dsd = category)
-      category && (params.cat = category)
-      sortBy && (params.sortBy = sortBy)
-      setSearchParams(params)
+      category && (params.cat = category);
+      sortBy && (params.sortBy = sortBy);
+      setSearchParams(params);
     }
   }, [category, dispatch, setSearchParams, sortBy]);
-
 
   return (
     <div>
@@ -138,6 +130,10 @@ const FilterSort = () => {
         </div>
       </div>
 
+      {/* ////////////////////  sorting ///////////// */}
+      {/* ////// */}
+      {/* ////// */}
+      {/* ////// */}
       <h3>Sort</h3>
       <div onChange={handleSort}>
         <input
