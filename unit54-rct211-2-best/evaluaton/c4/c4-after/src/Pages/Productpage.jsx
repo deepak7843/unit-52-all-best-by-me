@@ -1,10 +1,31 @@
-import React, { useState } from "react";
-// import { useSelector } from "react-redux";
+// import React from "react";
+
+// const Productpage = () => {
+//   return (
+//     <div style={{ width: "100%" }}>
+//       <div>
+//         {/* 
+//         1. Map through the product list items, and render them inside the "ProductCard.jsx", by passing the data through props
+//         2.  Use the inbuilt sort method before mapping through the data to show them in "asc" or "desc" order, based on URL Search Params 
+//         */}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Productpage;
+
+
+////////////  *****************    self *************************************************************************************************************************************************************************************************
+
+
+
+import React from "react";
 import styled from "styled-components";
 import { useEffect } from "react";
 import { getProducts } from "../Redux/action";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import ProductCard from "../Components/ProductCard";
 
 const Productpage = () => {
@@ -19,21 +40,13 @@ const Productpage = () => {
     dispatch(getProducts());
   }, []);
 
-  // let newProducts =
   console.log("products--", products);
 
   return (
     <div style={{ width: "100%" }}>
       <div className="productlist">
-        {/* if(urlSort&&urlSort==="asc")
-        {products.sort(function (a, b) {
-          return a.price - b.price;
-        })}
-        else if(urlSort&&urlSort==="desc")
-        {products.sort(function (a, b) {
-          return b.price - a.price ;
-        })} */}
-        {products.map((singleProduct) => {
+     
+        { products.length >0 && products.map((singleProduct) => {
           return (
             <ProductCardWrapper key={singleProduct.id}>
               <ProductCard item={singleProduct} />{" "}

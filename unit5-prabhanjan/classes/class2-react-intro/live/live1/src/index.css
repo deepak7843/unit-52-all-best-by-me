@@ -1,0 +1,8 @@
+.redtext {
+    color: red;
+    text-decoration: underline;
+}
+
+.border{
+    border: 2px solid greenyellow;
+}

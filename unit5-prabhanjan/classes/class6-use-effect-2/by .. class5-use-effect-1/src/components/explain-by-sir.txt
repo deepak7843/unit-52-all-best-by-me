@@ -1,0 +1,11 @@
+setInterval ( () => {
+    setCount(count-1)
+}, 1000  )
+
+
+
+// useEffect( () => {
+//     setInterval ( () => {
+//         setCount(count-1)
+//    }, 1000  )
+// }, [] )

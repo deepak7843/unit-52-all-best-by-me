@@ -1,0 +1,29 @@
+
+
+{
+   "users" : [  
+
+     {
+        "id" : 1,
+        "name" : "Shubham"
+
+     },
+
+     {
+        "id" : 2,
+        "name" : "Vishesh"
+
+     }
+
+   ],
+
+   "scores" : [
+     {
+         "id" : 1,
+         "userid" : 2,
+         "score" : 20
+     }
+
+   ]
+
+}

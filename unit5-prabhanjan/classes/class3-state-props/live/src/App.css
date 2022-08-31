@@ -1,0 +1,21 @@
+/* .App {
+  text-align: center;
+} */
+
+/* .list_style{
+  list-style: circle()  ;
+} */
+
+.circle_List{
+  list-style: circle; 
+}
+
+.squareList{
+  list-style: square;
+}
+
+.nav{
+
+  display: flex;
+  justify-content: space-around ;
+}
