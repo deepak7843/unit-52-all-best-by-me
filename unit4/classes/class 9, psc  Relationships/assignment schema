@@ -1,0 +1,36 @@
+users
+	- firstName
+	- lastName
+
+sections
+	- name // Science, Fiction
+
+books
+	- sectionId
+	- name
+	- body
+
+
+authors
+	- userId
+
+
+book_author
+	- bookId
+	- authorId
+
+
+checked_out
+	- userId
+	- bookId
+	- checkedOutTime ( default to null ) => date
+	- checkedInTime ( default to null ) => date
+
+
+// Book is not available
+checkedOutTime => 11th Mar 8:00 am -> not null
+checkedInTime => null
+
+// Book is available
+checkedOutTime => 11th Mar 8:00 am -> not null
+checkedInTime => 12th Mar 8:00 am -> not null // 12 Mar 5 pm

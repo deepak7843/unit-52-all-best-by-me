@@ -1,0 +1,12 @@
+{
+  "name": "eventloops",
+  "version": "1.0.0",
+  "description": "learning event loops",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Dhaval Chheda",
+  "license": "ISC"
+}
