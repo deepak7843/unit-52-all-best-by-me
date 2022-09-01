@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        padding: 5px;
+        margin: 10px;
+    }
+</style>
+<body>
+    <!-- <div>
+        <button>Primary</button>
+        <button>Secondary</button>
+        <button>Succees</button>
+        <button>Danger</button>
+        <button>Warning</button>
+        <button>Info</button>
+    </div> -->
+</body>
+</html>
+
+<script>
+    var btn1=document.createElement("button")
+    var btn2=document.createElement("button")
+    var btn3=document.createElement("button")
+    var btn4=document.createElement("button")
+    var btn5=document.createElement("button")
+    var btn6=document.createElement("button")
+
+    btn1.textContent="primary"
+    btn2.textContent="secondary"
+    btn3.textContent="success"
+    btn4.textContent="danger"
+    btn5.textContent="warning"
+    btn6.textContent="info"
+
+    btn1.style.backgroundColor="blue"
+    btn2.style.backgroundColor="green"
+    btn3.style.backgroundColor="red"
+    btn4.style.backgroundColor="orange"
+    btn5.style.backgroundColor="grey"
+    btn6.style.backgroundColor="cyan"
+
+    document.querySelector("body").append(btn1,btn2,btn3,btn4,btn5,btn6)
+
+</script>

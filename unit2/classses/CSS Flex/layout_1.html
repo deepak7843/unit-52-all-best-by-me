@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            font-family: system-ui;;
+            font-size: 22px;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 50px 300px;
+            grid-gap: 25px;
+            grid-template-areas: 
+            "a a a a"
+            "r g b b1";
+        }
+        .container>div{
+            padding: 10px;
+        }
+        .container>div:nth-child(1){
+            background-color: yellow;
+            grid-area: a;
+        }
+        .container>div:nth-child(2){
+            background-color: #FF0000;
+            grid-area: r;
+        }
+        .container>div:nth-child(3){
+            background-color: #00FF2A;
+            grid-area: g;
+        }
+        .container>div:nth-child(4){
+            background-color:#5763EE;
+            grid-area: b;
+        }
+        .container>div:nth-child(5){
+            background-color: #989898;
+            grid-area: b1;
+        }
+        @media only screen and (min-width:375px) and (max-width:812px) {
+            .container{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: 80px 200px 200px;
+                grid-template-areas: 
+                "a a"
+                "r b"
+                "g b1";
+            }
+            
+        }
+        @media only screen and (min-width:0px) and (max-width:375px) {
+            .container{
+                display: grid;
+                grid-template-columns: 100%;
+                grid-template-rows: 80px 160px 160px 160px 160px;
+                grid-template-areas: 
+                "a"
+                "r"
+                "b1"
+                "g"
+                "b";
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>Navigation</div>
+        <div>Box1</div>
+        <div>Box2</div>
+        <div>Box3</div>
+        <div>Box4</div>
+    </div>
+</body>
+</html>

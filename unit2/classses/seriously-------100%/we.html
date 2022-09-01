@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <style>
+     tr,th,td{
+         border: 1px solid;
+     }
+ </style>
+
+</head>
+<body>
+    
+  <form>
+     <input id="item" type="text" placeholder="enter item">
+     <input id="qty" type="number" placeholder="enter quantity">
+     <input type="submit" value="add task">
+  </form>
+
+  <table>
+      <thead>
+          <tr>
+              <th>item</th>
+              <th>quantity</th>
+              <th>delete item</th>
+          </tr>
+      </thead>
+
+      <tbody></tbody>
+
+  </table>
+
+</body>
+</html>
+
+<script>
+    document.querySelector('form').addEventListener("submit", todoList)
+   var todoarr= JSON.parse(localStorage.getItem("todoTodo"))|| []
+   
+//    createtable(todoarr)
+
+   window.addEventListener("load", function(){
+    createtable(todoarr)
+   })
+
+    function todoList(){
+        event.preventDefault();
+        var item= document.querySelector("#item").value;
+        var qty= document.querySelector("#qty").value;
+        // console.log(item, qty);
+
+
+        // ******************************************************
+    
+    var tasklist= { itemname: item, itemqty:qty}
+    todoarr.push(tasklist)
+    localStorage.setItem("todoTodo", JSON.stringify(todoarr));
+    // console.log(todoarr);
+    createtable(todoarr)
+    }
+
+    function createtable(todoarr){
+        console.log(todoarr);
+
+        // ************************************************
+
+        document.querySelector("tbody").innerHTML= ""
+        todoarr.map(function(elem,index){
+        
+        var tr=document.createElement("tr");
+
+        var td1=document.createElement("td");
+        td1.textContent= elem.itemname
+
+        var td2=document.createElement("td");
+        td2.textContent= elem.itemqty
+
+        var td3=document.createElement("td"); 
+        td3.textContent="Delete"
+        td3.addEventListener("click", function(){
+            deletetask(index)
+        })
+
+        tr.append(td1, td2, td3)
+
+        document.querySelector("tbody").append(tr);
+
+// *****************************************
+        })
+    }
+
+    function deletetask(index){
+      console.log(index);
+      todoarr.splice(index,1)
+      console.log(todoarr);
+      localStorage.setItem("todoTodo", JSON.stringify(todoarr))
+      createtable(todoarr)
+    }
+</script>
+
+<!-- [
+    {
+        "itemname": "pen ",
+        "itemqty": "5"
+    },
+    {
+        "itemname": "pen cil",
+        "itemqty": "55"
+    },
+    {
+        "itemname": "pen ciltyu",
+        "itemqty": "557"
+    }
+] -->
