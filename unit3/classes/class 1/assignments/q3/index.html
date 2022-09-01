@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+     .container{
+        width:70%;
+        margin: auto;
+        margin-top: 100px;
+        border: 1px solid red;
+    }
+    h1{
+        color: saddlebrown;
+    }
+    .detail{
+     border: 3px solid green;   
+    }
+    </style>
+   
+</head>
+<body>
+   <div class="container">
+       
+       <h1>Js Datatype Learning App</h1>
+       <div>
+           <button onclick="obj()">Objects</button>
+           <button onclick="arr()">Arrays</button>
+           <button onclick="fun()">Functions</button>
+           <button onclick="str()">Strings</button>
+           <button onclick="num()">Numbers</button>
+           <button onclick="nul()">Null</button>
+           <button onclick="und()">Undefined</button>
+       </div>
+
+       <div class="detail">
+
+       </div>
+
+   </div> 
+</body>
+</html>
+<script>
+   var x = document.querySelector(".detail");
+
+
+function obj(){
+    x.innerHTML = "";
+
+var ul = document.createElement("ul");
+
+var li1 = document.createElement("li");
+li1.textContent = "Object will be of any data type  array, function, nested object,string, number.";
+var li2 = document.createElement("li");
+li2.textContent = "Object are comma-seperated key-value pairs  in curly braces.";
+var li3 = document.createElement("li");
+li3.textContent = "Objects are  complex ";
+var li4 = document.createElement("li");
+li4.textContent = "Variables that are assigned a reference value are given a reference or a pointer to that value. ";
+var li5 = document.createElement("li");
+li5.textContent = "The variables don't actually store the value.";
+
+ul.append(li1,li2,li3,li4,li5);
+x.append(ul);
+}
+
+
+</script>

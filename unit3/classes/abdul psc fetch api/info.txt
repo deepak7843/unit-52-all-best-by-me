@@ -1,0 +1,8 @@
+
+Abdul Jabbar Peer  Feb 5th at 8:09 PM
+There is some issue with the video upload.. once I retrieve, I'll share it but have a look a code and the flow in the said format
+You should be able to figure it out.. you have the entire code.. also I have added comments .. please don't wait for video.. 
+
+try to understand from code shared
+
+products -- cart -- checkout -- payment

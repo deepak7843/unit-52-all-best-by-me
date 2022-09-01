@@ -1,0 +1,76 @@
+#register-form{
+    width:35%;
+    display: block;
+    margin:auto;
+    text-align: center;
+    align-items: center;
+    margin-top: 4%;
+    font-family: sans-serif;
+  }
+  form>input{
+    padding:4%;
+    width:70%;
+    margin-bottom: 2%;
+    border-radius:0;
+    outline:0;
+    border:1px solid
+  }
+  #h{
+    margin-left:-15%
+  }
+  #s{
+    margin:5% 0 5% 0
+  }
+  button{
+    width:79%;
+    background-color: rgb(164,53,240);
+    padding:4%;
+    color:white;
+    font-weight:700;
+    border:0;
+    font-size: 104%;
+    cursor:pointer;
+
+  }
+  #c{
+    display:flex;
+    width:80%;
+    /* margin-left: 2%; */
+    text-align: left;
+    margin:2% 0 3% 3%
+  }
+  #check{
+    margin-left:11%;
+    
+  }
+  #c>p{
+    margin-left: 3%;
+  }
+  #f_b{
+    display:flex;
+    padding:4%;
+    margin-left:20%
+  }
+  #terms{
+    display:flex;
+    margin:2% 0 2% 0;
+    font-size:100%;
+    margin-left:35%
+  }
+  #terms>#p{
+    margin:0 1% 0 1%;
+    color:rgb(164,53,240)
+   
+  }
+  #icon{
+    display:flex;
+    width:73%;
+    padding:3%;
+    background-color: white;
+    margin:0 0 2% 10.5%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+  a{
+    margin-right:4%;
+    font-size: larger;
+  }

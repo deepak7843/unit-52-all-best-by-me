@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="icon"
+    href="https://logos-world.net/wp-content/uploads/2021/11/Udemy-Emblem.png"
+    type="image/x-icon"
+  />
+    <title>login</title>
+    <script src="https://kit.fontawesome.com/9b33d8169c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+
+  <body>
+
+    <div id="container"></div>
+
+    <div id="register-form">
+        <h3 id="h">Log In to Your Udemy Account!</h3>
+        <hr id="s">
+
+        <div id="icon">
+          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+          <h3>Continue with Facebook</h3>
+        </div>
+        <div id="icon">
+          <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+          <h3>Continue with Google</h3>
+        </div>
+        <div id="icon">
+          <a href="#"><ion-icon name="logo-apple"></ion-icon></a>
+          <h3>Continue with Apple</h3>
+        </div>
+
+        <form>
+          <input type="email" id="email" placeholder="Email" required/>
+          <input type="password" id="password" placeholder="Password" required />
+        </form>
+
+       <button onclick="LogIn()">Log In</button>
+        <div id="terms">
+            <p>or</p>
+            <p id="p">Forgot Password <p>
+             
+        </div>
+
+      
+        <div id="f_b">
+            <p>Don't have an account? </p>
+            <a href="signup.html"> Sign up</a>
+        </div>
+
+        
+      </div>
+      <div id="footer"></div>
+      <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>
+<script type="module">
+  import footer from "./components/footer.js"
+
+let navbar_div = document.getElementById("footer")
+navbar_div.innerHTML = footer()
+</script>
+<script src="scripts/login.js"></script>
+<script type="module">
+
+import navbar from "./components/navbar.js"
+
+let navbar_div = document.getElementById("container")
+navbar_div.innerHTML = navbar()
+
+</script>

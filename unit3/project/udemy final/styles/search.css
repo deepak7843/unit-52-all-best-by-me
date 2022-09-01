@@ -1,0 +1,213 @@
+#main_div{
+    width: 95%;
+    margin: auto;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    
+}
+#movies{
+    padding: 10px;
+    /* width: 450px;
+    height: 250px; */
+    margin-left: 250px;
+    /* border: 1px solid grey; */
+    overflow: hidden;
+    font-family: sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    cursor: pointer;
+    
+}
+/* #movies > p{
+    margin-top: 5px;
+} */
+
+#coursedata{
+    width: 600px;
+    height: 142px;
+    /* border: 1px solid black; */
+    font-family: sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 400;
+}
+#coursedata > h3{
+    margin-top: 10px;
+    cursor: pointer;
+}
+#coursedata > p{
+    margin-top: 6px;
+}
+#div3{
+    margin-top: 15px;
+    width: 70px;
+    height: 50px;
+    /* border: 2px solid green; */
+}
+/* body{
+    /* width: 80%; */
+    /* margin: auto; */
+/* } */ */
+#filter_sort{
+    display: flex;
+    gap: 20px;
+}
+#filter > button{
+    width: 100px;
+    padding: 15px;
+    font-size: 17px;
+}
+#sort > select{
+    width: 200px;
+    padding: 15px;
+    font-size: 17px;
+}
+#filter_check{
+    width: 240px;
+}
+#sort_filter{
+    width: 100%;
+    height: 62px;
+    border: 1px solid black;
+    
+}
+#sort_button{
+    width: 283px;
+    height: 62px;
+    /* border: 1px solid black; */
+    display: flex;
+    gap: 10px;
+}
+#sort_button > div >button{
+    width: 87px;
+    height: 62px;
+    /* border: 1px solid black; */
+    background-color: transparent;
+    font-size: 1.3rem;
+}
+#sort_button > div{
+    width: 180px;
+    height: 62px;
+    border: 1px solid black;
+    background-color: transparent;
+    font-size: 1rem;
+    /* padding: 10px; */
+}
+#sort_button > div > select{
+    width: 178px;
+    height: 43px;
+    /* border: 1px solid black; */
+    font-size: 1.2rem;
+    color: grey;
+    border: none;
+}
+#all_object{
+    display: flex;
+    width: 100%;
+}
+#filter_check{
+    width: 30%;
+}
+#total-result{
+    font-family: sf pro display,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    margin-top: 50px;
+    margin-left: 25px;
+}
+#explore{
+    font-family: sf pro display,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.2rem;
+    margin-top: 17px;
+    margin-left: 25px;
+    
+}
+#explore > a {
+    text-decoration: none;
+}
+#explore1{
+    font-family: sf pro display,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1rem;
+    margin-top: 17px;
+    margin-left: 25px;
+}
+#explore1 > a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+#all-feature{
+    width: 283px;
+    height: 62px;
+    /* border: 1px solid black; */
+    margin-top: 20px;
+    margin-left: 25px;
+    display: flex;
+    gap: 12px;
+}
+#all-feature1{
+    width: 33%;
+    border: 1px solid black;
+    text-align: center;
+    padding:20px;
+    font-weight: 700;
+    font-size: 1rem;
+}
+/* #all-feature1 {
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: white;
+} */
+#all-feature2{
+    width: 67%;
+    border: 1px solid black;
+}
+#all-feature2 > div > span{
+    font-size: 1rem;
+    margin-left: 9px;
+   
+    
+
+}
+#all-feature2 > div > select{
+    border: none;
+    font-size: 1rem;
+    margin-left: 8px;
+    padding: 10px 0;
+}
+#all_data{
+    
+    width: 96%;
+    height: 500px;
+    /* border: 1px solid black; */
+    margin: auto;
+    margin-top: 18px;
+    display: flex;
+}
+#all_data1{
+    width: 21.50%;
+    height: 100%;
+    font-family: sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    /* border: 1px solid black; */
+}
+.form-check > input{
+    margin-top: 10px;
+    font-size: 17px;
+}
+div > h2{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+#all_data2{
+    width: 79.50%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+

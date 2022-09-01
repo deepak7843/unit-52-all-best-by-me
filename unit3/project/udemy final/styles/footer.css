@@ -1,0 +1,41 @@
+.r1,
+.r2 {
+    background-color: rgb(28, 29, 31);
+    /* border: 1px solid red; */
+    display: flex;
+}
+
+#text,
+#img {
+    margin: 40px;
+}
+
+
+#text>span {
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+#text>.t2 {
+    color: blueviolet;
+}
+
+#text>.t1 {
+    color: white;
+}
+
+.r2 {
+    height: 400px;
+}
+
+.r2>div>h4 {
+    color: white;
+    margin-top: 10%;
+}
+
+.r2>div {
+    margin: 30px;
+}
+#footer{
+    margin-top: 5%;
+}

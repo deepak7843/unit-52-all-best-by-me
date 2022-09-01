@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    #container {
+      display: flex;
+      /* height: 500px; */
+    }
+    #sidebar {
+      flex: 2;
+      border: 1px solid black;
+    }
+    #main {
+      flex: 8;
+      border: 1px solid red;
+      display: grid;
+      grid-template-columns: repeat(3, 30%);
+      grid-gap: 3%;
+    }
+  </style>
+
+  <body>
+    <div id="container">
+      <div id="sidebar"></div>
+
+      <div id="main"></div>
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  import sidebar from "./components/sidebar.js";
+  // console.log("sidebar:", sidebar);
+
+  import { makeAPIcall, appendPictures } from "./scripts/main.js";
+  // console.log("makeAPIcall:", makeAPIcall);
+
+  let sidebar_div = document.getElementById("sidebar");
+
+  sidebar_div.innerHTML = sidebar();
+
+  // https://api.unsplash.com/photos/?client_id=Xj5m7m27kbM32SqZOfDst8pikYupUzRqfEu1J5g6HVg
+
+  let images_data = await makeAPIcall(
+    "https://api.unsplash.com/photos/?client_id=Xj5m7m27kbM32SqZOfDst8pikYupUzRqfEu1J5g6HVg"
+  );
+  console.log("images_data:", images_data);
+
+  let parent = document.getElementById("main");
+  appendPictures(images_data, parent);
+
+  let input = document.getElementById("searchbar");
+  input.addEventListener("keypress", (e) => {
+    // console.log("e:", e);
+
+    if (e.key === "Enter") {
+      let input_value = document.getElementById("searchbar").value;
+
+      localStorage.setItem("search_term", input_value);
+      window.location.href = "search.html";
+    }
+  });
+</script>

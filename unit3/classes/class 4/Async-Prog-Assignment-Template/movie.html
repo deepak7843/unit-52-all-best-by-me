@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #nav {
+            display: flex;
+            justify-content: right;
+            background-color: tomato;
+            }
+
+        a {
+            color: black;
+            margin: 10px;
+            margin-right: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        img{
+            height: 320px;
+            width: 390px;
+            border-radius: 15px;
+
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 450px);
+            grid-gap:30px; 
+            row-gap: 40px;
+            width: 95%;
+            margin: auto;
+            
+        }
+        #container>.box{
+            border-radius: 15px;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        }
+        .box>h3,h4{
+            margin-left: 20px;
+        }
+        #sort{
+            margin-left: 30px;
+            margin-bottom: 30px;
+            height: 30px;
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <a href="./home.html">Home</a>
+        <a href="./login.html">Login</a> 
+        <a href="./signup.html">Signup</a>
+    </div>
+    <div>
+        <select id="sort" onchange="sorting()"> 
+            <option>Sort by IMDB </option>
+            <option value="high">High to low</option>
+            <option value="low">Low to high</option>
+        </select>
+    </div>
+    <div id="sliding"></div>
+    <div id="container"></div>
+  
+
+  
+</body>
+</html>
+<script>
+  
+  let arr=[];
+  function yrf(src, nm, dt, rt) {
+        this.img = src,
+            this.name = nm,
+            this.date = dt,
+            this.imd = rt
+    }
+
+  let m1 = new yrf("https://image.shutterstock.com/z/stock-photo-business-as-usual-232844683.jpg", "Hangama", "5/6/2000", "5.8")
+    arr.push(m1);
+    let m2 = new yrf("https://image.shutterstock.com/image-photo/bangkok-thailand-december-8-2019-600w-1588449007.jpg", "Welcome", "10/6/2013", "6.5")
+    arr.push(m2);
+    let m3 = new yrf("https://image.shutterstock.com/z/stock-vector-bollywood-indian-cinema-movie-banner-or-poster-with-curtain-and-spotlights-vector-illustration-1230363820.jpg", "O M G", "15/5/2007", "7.7")
+    arr.push(m3);
+    let m4 = new yrf("https://image.shutterstock.com/z/stock-photo-realistic-detailed-d-popcorn-snack-in-striped-bucket-card-cinema-movie-fast-food-illustration-1935126638.jpg", "P K", "8/11/2013", "9.5")
+    arr.push(m4);
+    let m5 = new yrf("https://image.shutterstock.com/z/stock-vector-cinema-horror-poster-with-hand-from-the-earth-vector-illustration-1100495507.jpg", "Jab tak hai jan", "10/4/2010", "8.5")
+    arr.push(m5);
+    let m6 = new yrf("https://image.shutterstock.com/z/stock-vector-movie-concept-poster-design-template-detailed-vector-illustration-214506826.jpg", "Hellow brother", "2/8/2017", "9.0")
+    arr.push(m6);
+    let m7 = new yrf("https://image.shutterstock.com/z/stock-vector-empty-movie-started-retro-film-frame-isolated-on-black-background-decorative-vintage-golden-symbol-1632590926.jpg", "Lakir", "11/2/2018", "4.4")
+    arr.push(m7);
+    let m8 = new yrf("https://image.shutterstock.com/image-photo/los-angeles-ca-july-22-600w-1460141627.jpg", "Akira", "19/5/2016", "9.4")
+    arr.push(m8);
+    let m9 = new yrf("https://image.shutterstock.com/image-vector/vector-banner-festival-horror-movie-600w-1204345450.jpg", "Danger", "1/2/2019", "8.5")
+    arr.push(m9);
+   display(arr);
+   console.log(arr);
+   function display(arr) {
+   let x=``;
+   arr.map(function(ele){
+       x+= ` <div class="box">
+        <div>
+        <img src="${ele.img}" alt="">
+        </div>
+
+        <h3>Name :${ele.name}</h3>
+        <h4>Date :${ele.date}</h4>
+        <h4>IMD rating :${ele.imd}</h4>
+    </div>`
+   })
+   let test = document.querySelector("#container");
+    test.innerHTML = x;
+}
+function sorting() {
+
+
+let y = document.querySelector("#sort").value;
+
+if (y == "low") {
+    arr.sort(function (a, b) {
+        return Number(a.imd) - Number(b.imd);
+    })
+}
+if (y == "high") {
+    arr.sort(function (a, b) {
+        return Number(b.imd) - Number(a.imd);
+    })
+}
+document.querySelector("#container").innerHTML = "";
+display(arr)
+}
+
+
+
+</script>

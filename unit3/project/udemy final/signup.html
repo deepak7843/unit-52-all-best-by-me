@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="icon"
+    href="https://logos-world.net/wp-content/uploads/2021/11/Udemy-Emblem.png"
+    type="image/x-icon"
+  />
+    <title>signup</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/signup.css">
+    <link rel="stylesheet" href="styles/footer.css">
+ 
+</head>
+
+  <body>
+
+    <div id="container"></div>
+
+    <div id="register-form">
+        <h3 id="h">Sign Up and Start Learning!</h3>
+        <hr id="s">
+
+        <form>
+          <input type="text" id="name" placeholder="👤 Full Name" required/>
+          <input type="email" id="email" placeholder="✉  Email" required/>
+          <input type="password" id="password" placeholder="Password" required/>
+        </form>
+
+        <div id="c">
+            <input type="checkbox"value="checked" id="check"><p>I'm in for emails with exciting discounts and personalized recommendations </p></input>
+        </div>
+
+       
+
+        <button  onclick="Register()">Sign Up</button>
+        <div id="terms">
+            <p>By signing up,you agree to our</p>
+            <p id="p"> Terms of use <p>
+             <p>and</p>
+             <p id="p"> Privacy Policy. </p>
+        </div>
+
+        <hr id="hrb">
+        <div id="f_b">
+            <p>Already have an account? </p>
+            <a href="login.html"> Log In</a>
+        </div>
+
+        
+      </div>
+
+      <div id="footer"></div>
+
+</body>
+</html>
+<script type="module">
+  import footer from "./components/footer.js"
+
+let navbar_div = document.getElementById("footer")
+navbar_div.innerHTML = footer()
+</script>
+<script src="scripts/signup.js"></script>
+<script type="module">
+
+import navbar from "./components/navbar.js"
+
+let navbar_div = document.getElementById("container")
+navbar_div.innerHTML = navbar()
+
+</script>

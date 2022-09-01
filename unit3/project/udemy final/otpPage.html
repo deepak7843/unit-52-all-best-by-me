@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Payment</title>
+    <style>
+        body{
+            background-color: rgb(243, 242, 242);
+        }
+        #otpPage{
+            width:33%;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            background-color: white;
+            padding-top: 80px;
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 5%;
+        }
+        table{
+            width:100%;
+        }
+        td{
+            width:50%;
+        }
+        .header{
+            background-color: rgb(238, 235, 235);
+            padding:20px;
+        }
+        .footer{
+            padding:10px;
+        }
+        .footer>button{
+            background-color: rgb(236, 181, 77);
+            border:1px solid rgb(153, 82, 2);
+            color:black;
+            padding:10px 29px ;
+        }
+    </style>
+</head>
+<body>
+    <div id="otpPage">
+        <div class="header">
+            <table>
+                <tr>
+                    <td>Merchant Name:</td>
+                    <td>: UDEMY</td>
+                </tr>
+                <tr>
+                    <td>Payment Amount:</td>
+                    <td class="amount"></td>
+                </tr>
+                <tr>
+                    <td>Card number:</td>
+                    <td class="num"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer">
+            <h3><b style="color:rgb(44, 71, 146)">Authenticate Payment</b></h3>
+            <div style="color:gray;font-size: 14px;">Please enter your One Time Password(OTP)</div>
+            <div style="color:gray;font-size: 14px;">send to your registered mobile number</div>
+            <div style="padding-top:30px; padding-bottom:10px;"><b>Enter One Time Password(OTP)</b></div>
+            <input style="padding:10px;width:220px" type="password"><button onclick="payment()" style="margin-left:25px;" type="submit">Make Payment</button>
+            <div style="margin-top:12px;margin-bottom:12px;"><a href="otpPage.html" style="color:black">Resend OTP</a></div>
+            <div style="padding-bottom:30px;font-size: 13px;" ><a href="checkout.html">Click here to abort transaction and go back to merchant site</a></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    alert("Enter Otp")
+    let cardNum=JSON.parse(localStorage.getItem("cardNum"));
+    let finalAmount=JSON.parse(localStorage.getItem("finalAmount"));
+    document.querySelector(".amount").textContent=": "+finalAmount;
+    document.querySelector(".num").textContent=": "+cardNum;
+    let otp=document.querySelector("input");
+    function payment(){
+        if(otp.value=="1234"){
+            alert("Payment Successful- Happy Learning");
+            window.location.href="home.html";
+        }
+        else{
+            alert("Wrong OTP");
+        }
+    }
+    
+</script>

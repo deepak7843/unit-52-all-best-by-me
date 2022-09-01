@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <style>
+    input {
+
+      width: 200px;
+    }
+
+    #movies {
+
+      height: 200px;
+      width: 206px;
+      border: solid 1px black;
+      overflow: scroll;
+
+    }
+  </style>
+
+  <body>
+
+    <input oninput="debounce(main, 1000)" type="text" id="query">
+
+    <!-- <input oninput="main()" type="text" id="query"> -->
+
+    <div id="movies"></div>
+
+ 
+  </body>
+
+</html>
+
+<script src="live.js"></script>

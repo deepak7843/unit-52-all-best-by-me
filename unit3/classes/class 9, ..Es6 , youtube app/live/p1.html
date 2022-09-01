@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <input type="text" id="searchTerm" placeholder="Search Video">
+    <button onclick="searchVideo()" >search button</button>
+
+    <div id="searchResults"></div>
+
+    <script>
+
+        let API_KEY="AIzaSyDjQMNtpb52drt3zDkimwyIjbRbZUJ-2Bc"
+        let searchResultsDiv=document.getElementById("searchResults")
+     
+
+        async function getdata() {
+        //  try{
+
+        //  }
+         let res = await fetch("https://www.googleapis.com/youtube/v3/search?key=${API_KEY}");
+         let data= await res.json()
+          console.log(data);
+     }
+     getdata()
+</script>
+</body>
+</html>

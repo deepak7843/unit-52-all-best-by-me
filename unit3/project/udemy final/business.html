@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="icon"
+    href="https://logos-world.net/wp-content/uploads/2021/11/Udemy-Emblem.png"
+    type="image/x-icon"
+  />
+    <title>Udemy business</title>
+    <script src="https://kit.fontawesome.com/9b33d8169c.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+        }
+    #navbar{
+        width: 1000px;
+        height: 70px;
+        margin: auto;
+        border-top: 1px solid  grey;
+        border-bottom: 1px solid  grey;
+
+        display: flex;
+        /* justify-content: space-around; */
+        /* position: fixed; */
+    }
+    #logo{
+        /* margin: 20px; */
+        padding: 20px;
+        width: 20%;
+        /* height: 100%; */
+        border-right: 1px solid grey;
+        /* position: fixed; */
+
+
+    }
+    #right_nav{
+        display: flex;
+        width: 60%;
+        /* height: 100%; */
+        padding:25px ;
+        /* border: 1px solid black; */
+        justify-content: space-between;
+        /* text-align: center; */
+        /* position: fixed; */
+
+    }
+    #navbar button{
+       margin: 15px  ;
+        height: 40px;
+        background: black;
+        border: none;
+        color: white;
+        /* padding: 20px; */
+        /* position: fixed; */
+
+
+    }#content{
+        width: 1000px;
+        height: 700px;
+        display: flex;
+        margin: auto;
+        margin-top:  50px;
+        /* vertical-align: top; */
+        /* border: 1px solid black; */
+    }
+    #left_content{
+        width: 58%;
+        height: 75%;
+        font-size: 17px;
+
+        /* border: 1px solid black; */
+
+    }
+    #left_content>div{
+        height: 30%;
+    }
+   #right_content>input{
+       font-size: 15px;
+    font-weight: bold;
+    }
+    #right_content{
+        width: 40%;
+        /* border: 1px solid black; */
+        height: 100%;
+    }
+    #right_content>input{
+        margin-top: 10px;
+        width: 98%;
+        height: 40px;
+    }
+    #right_content>select{
+        margin-top: 10px;
+        width: 100%;
+        height: 40px;
+    }
+    #trusted_logo{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+        margin: 10px;
+    }
+    #trusted_logo>div>img{
+        height: 30px;
+    }
+    .trusted_logo{
+        margin-top: 50px;
+    }
+    /* footer.. ............. */
+    #business_footer{
+        width: 100%;
+        /* background: black; */
+        /* color: white; */
+    }
+    #business_footer_content{
+        height: 300px;
+        width: 1000px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        /* border: 1px solid salmon; */
+        padding: 0 5% 0 5% ;
+    }
+    #business_footer_content>div{
+        width: 30%;
+        height: 100%;
+        /* border: 1px solid salmon; */
+
+    }
+    #footer_logo{
+        display: flex;
+        width: 100%;
+        /* justify-content: space-between; */
+    }
+    #footer_logo>svg {
+       margin: 10px;
+       height: 28px;
+       
+    }
+    .col1>p:hover{
+        color: rgb(164,53,240);
+        cursor: pointer;
+    }
+    .col2>p:hover{
+        color: rgb(164,53,240);
+        cursor: pointer;
+    }
+    /* .col3>svg:hover{
+        color: rgb(164,53,240);
+        cursor: pointer;
+    }
+    svg :hover{
+        color: rgb(164,53,240);
+    } */
+    #row2{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+    }
+    #boat_chat{
+        display: flex;
+        flex-direction: row-reverse;
+        /* width: 30px;
+        height: 30px; */
+    }
+    #boat_chat>svg{
+        width: 30px;
+        /* position: fixed; */
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="logo">
+            <img onclick="window.location.href='home.html'" src="https://business.udemy.com/wp-content/uploads/2021/04/udemy-business-logo.svg" alt="">
+        </div>
+        <div id="right_nav">
+            <div>Why Udemy Business</div>
+            <div>Solutions</div>
+            <div>On-Demand Courses</div>
+            <div>Resources</div>
+            <div><a href="plan.html">Plan</a></div>
+            <div>Log in</div>
+           
+        </div>
+        <div>
+            <button>Get stardet</button>
+        </div>
+    </div>
+    <div id="content">
+        <div id="left_content">
+            <div>
+                <h1>Get your demo</h1>
+                <p>See why leading organizations choose Udemy Business as their destination for employee learning.</p>
+            </div>
+            <div>
+                <h2>In your demo, learn more about:</h2>
+                <ul>
+                    <li>Unlimited access to 14,000+ top courses selected from Udemy.com – anytime, on any device</li>
+                    <li>Fresh content taught by global instructors – for any learning style</li>
+                    <li>Actionable learning insights and admin functionality</li>
+                </ul>
+            </div>
+            <div class="trusted_logo">
+                <h3>Trusted by:</h3>
+                <div id="trusted_logo">
+                    <div>
+                        <img src="https://business.udemy.com/wp-content/uploads/2021/12/gofundme.png.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="https://business.udemy.com/wp-content/uploads/2021/07/Box.png.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="https://business.udemy.com/wp-content/uploads/2021/07/ABM-amro-bank.png.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="https://business.udemy.com/wp-content/uploads/2021/07/Aflac-1.png.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="https://business.udemy.com/wp-content/uploads/2021/07/VW-logo-grey.png.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="https://business.udemy.com/wp-content/uploads/2021/07/Tata.TCS_.png.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="right_content">
+            <input type="text" placeholder="First Name*"><br>
+            <input type="text" placeholder="Last Name*"><br>
+            <input type="text" placeholder="Work Email*"><br>
+            <input type="text" placeholder="Phone Number*"><br>
+            <input type="text" placeholder="Company Name*"><br>
+            <input type="text"placeholder="Job Title*"><br>
+            <select name="" id="">
+                <option value="">Select</option>
+                <option value="">I'm a contractor / freelancer</option>
+                <option value="">1-199</option>
+                <option value="">200-1,999</option>
+                <option value="">2,000-5,000</option>
+                <option value="">5,001+</option>
+            </select> <br>
+            <select name="" id="">
+                <option value="">Select</option>
+                <option value="">Just myself</option>
+                <option value="">5-20</option>
+                <option value="">21-200</option>
+                <option value="">201-2,000</option>
+                <option value="">2,001+</option>
+            </select> <br>
+            <input type="text" placeholder="What are your training needs"><br>
+            <button style="background-color: black;color: white;">Get in touch</button>
+            <p>
+                
+            By signing up, you agree to our terms and privacy policy. You agree that we can contact you about Udemy and use data from third parties to personalize your experience.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- FOOTER PART -->
+
+
+    <div id="business_footer">
+   
+    <div id="business_footer_content">
+        <div class="col1">
+           <p>Udemy.com</p>
+           <p>About Us</p>
+           <p>Events</p>
+           <p>News</p>
+           <p>Investor Relations</p>
+           <p>Careers- we're hiring!</p>
+        </div>
+        <div class="col2">
+            <p>Help</p>
+            <p>Terms & conditions</p>
+            <p>Privacy policy</p>
+            <p>Cookie settings</p>
+            <p>Sitemap</p>
+        </div>
+        <div class="col3">
+            <p>Follow us</p>
+            <div id="footer_logo">
+            <!-- <i class="fa-brands fa-linkedin-in"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+             <i class="fa-brands fa-instagram"></i> -->
+             <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </div>
+        </div>
+    </div>
+    <div id="row2" style="margin-left: 5%;">
+    <img src="https://business.udemy.com/wp-content/uploads/2021/04/udemy-business-logo.svg" alt="">
+    <p>© 2022 Udemy, Inc.</p>
+    </div>
+</div>
+        <div id="boat_chat">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.<path d="M284.046,224.8a34.114,34.114,0,1,0,34.317,34.113A34.217,34.217,0,0,0,284.046,224.8Zm-110.45,0a34.114,34.114,0,1,0,34.317,34.113A34.217,34.217,0,0,0,173.6,224.8Zm220.923,0a34.114,34.114,0,1,0,34.317,34.113A34.215,34.215,0,0,0,394.519,224.8Zm153.807-55.319c-15.535-24.172-37.31-45.57-64.681-63.618-52.886-34.817-122.374-54-195.666-54a405.975,405.975,0,0,0-72.032,6.357,238.524,238.524,0,0,0-49.51-36.588C99.684-11.7,40.859.711,11.135,11.421A14.291,14.291,0,0,0,5.58,34.782C26.542,56.458,61.222,99.3,52.7,138.252c-33.142,33.9-51.112,74.776-51.112,117.337,0,43.372,17.97,84.248,51.112,118.148,8.526,38.956-26.154,81.816-47.116,103.491a14.284,14.284,0,0,0,5.555,23.34c29.724,10.709,88.549,23.147,155.324-10.2a238.679,238.679,0,0,0,49.51-36.589A405.972,405.972,0,0,0,288,460.14c73.313,0,142.8-19.159,195.667-53.975,27.371-18.049,49.145-39.426,64.679-63.619,17.309-26.923,26.07-55.916,26.07-86.125C574.394,225.4,565.634,196.43,548.326,169.485ZM284.987,409.9a345.65,345.65,0,0,1-89.446-11.5l-20.129,19.393a184.366,184.366,0,0,1-37.138,27.585,145.767,145.767,0,0,1-52.522,14.87c.983-1.771,1.881-3.563,2.842-5.356q30.258-55.68,16.325-100.078c-32.992-25.962-52.778-59.2-52.778-95.4,0-83.1,104.254-150.469,232.846-150.469s232.867,67.373,232.867,150.469C517.854,342.525,413.6,409.9,284.987,409.9Z"/></svg>
+       
+         </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+Ambuj Kumar  Feb 14th at 3:39 PM
+accept: "application/json",
+            "Content-Type: application/x-www-form-urlencoded"
+
+
+
+
+
+random
+
+Shashank Shalabh  Feb 14th at 3:38 PM
+"Content-Type: application/x-www-form-urlencoded"
+random
+
+Shashank Shalabh  Feb 14th at 3:38 PM
+"accept: application/json"
+random
+
+Harsh Patel  Feb 14th at 3:35 PM
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+      div{
+          height:300px;
+      }
+#container{
+    display: flex;
+    height:600px;
+}
+#input-section{
+    flex: 1; margin: 5%;
+}
+#input-text{
+width:98%;height:80%;
+}
+#output-section{
+    border: 1px solid black;
+    flex: 1; margin: 5%;
+}
+  </style>
+  <body>
+    <div id="container">
+      <div id="input-section">
+          <button id="translate-btn">Translate</button>            
+<textarea name="" id="input-text"></textarea>
+</div>
+      <div id="output-section">
+        <p id="translated-text">
+          <!--Show translated text here-->
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+async function  translate(){
+    let input = document.getElementById("input-text").value;
+let res= await post("https://libertranslate.com/translate",{
+method:"POST",
+})
+}
+</script>
+random
+
+Shashank Shalabh  Feb 14th at 3:34 PM
+https://libretranslate.com/translate
+random
+
+Swanand Kadam  Feb 14th at 3:11 PM
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style></style>
+
+  <body>
+    <div id="container">
+      <div id="input-section">
+        <!--Create button that will run translate text function, give id "translate-btn"-->
+        <!--Create input that will accept text to be translated, give id "input-text"-->
+      </div>
+      <div id="output-section">
+        <p id="translated-text">
+          <!--Show translated text here-->
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script></script>
