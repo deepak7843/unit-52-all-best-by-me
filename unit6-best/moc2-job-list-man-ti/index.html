@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mock2</title>
+    <!-- //////// -->
+    <!-- //////// -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- //////// -->
+    <!-- //////// -->
+  </head>
+  <body>
+    <div>
+      <div id="title">
+        <h1>All Jobs</h1>
+      </div>
+
+      <div id="filterSearch">
+        <!-- /////// -->
+        <!-- /////// -->
+        <!-- /////// -->
+        <!-- /////  filter  ///////////////// -->
+        <!-- /////// -->
+        <!-- /////// -->
+        <!-- /////// -->
+
+        <div id="filter">
+          <p>Filter accordind to the job role</p>
+          <select id="role" onChange="filterByRole()">
+            <option>Roles</option>
+            <option value="Frontend">Frontend</option>
+            <option value="FullStack">FullStack</option>
+          </select>
+        </div>
+        <!-- /////// -->
+        <!-- /////// -->
+        <!-- /////// -->
+        <!-- /////  search  ///////////////// -->
+        <!-- /////// -->
+        <!-- /////// -->
+        <!-- /////// -->
+
+        <div id="search">
+          <input id="query" type="text" placeholder="Search for language" />
+          <button id="searchButton">Search</button>
+        </div>
+
+        <!-- /////// -->
+        <!-- /////// -->
+        <!-- /////// -->
+        <!-- /////  pagination  ///////////////// -->
+        <!-- /////// -->
+        <!-- /////// -->
+        <!-- /////// -->
+
+        <div id="pagination">
+          <button class="btn" onclick="decPage()"><</button>
+          <button class="btn" onclick="incPage()">></button>
+        </div>
+      </div>
+
+      <div id="main"></div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

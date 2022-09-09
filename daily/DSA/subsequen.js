@@ -1,20 +1,31 @@
-
-
-
-
-let ar = ["a", "b", "c"];
+let ar = ["a", "b", "c", "d"];
 // let ar = "abc";
-let n = 3,
+let n = ar.length,
   index = 0,
   nar = [];
-// console.log(gs(nar,ar,i,n));
+// console.log(gsub(nar,ar,i,n));
 
 gsub(nar, ar, index, n);
 
+function gsub(nar, ar, index, n) {
+  if (nar.length > 0) {
+    console.log(nar);
+  }
+
+  // if(index===n) return   //// perhaps without is line ke bhi kam ho jaega...
+ 
+
+  for (let i = index; i < n; i++) {
+    nar.push(ar[i]);
+    gsub(nar, ar, i + 1, n);
+    nar.pop();
+  }
+}
+
 ////
 ////
 ////
-//// in line 11 pop ki jagah, slice not working
+//// in line 21 pop ki jagah, slice not working
 // nar.slice(0,nar.length-1)
 // nar=nar.slice(0,nar.length-1)
 ////
@@ -22,7 +33,13 @@ gsub(nar, ar, index, n);
 
 //////
 //////
+//////
+//////
 ////// below atre by string don't use it
+//////
+//////
+//////
+//////
 //////
 
 // function gs(nst, st, n1, ind) {
@@ -47,8 +64,8 @@ gsub(nar, ar, index, n);
 //////
 //////
 //////
-//////
-let str = "7895",
-  array = [7, 8, 9, 5];
-console.log(str.slice(0, str.length - 1));
-console.log(array.slice(0, array.length - 1));
+// //////
+// let str = "7895",
+//   array = [7, 8, 9, 5];
+// console.log(str.slice(0, str.length - 1));
+// console.log(array.slice(0, array.length - 1));

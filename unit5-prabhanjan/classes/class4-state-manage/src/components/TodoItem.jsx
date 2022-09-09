@@ -1,6 +1,6 @@
 export const TodoItem = ({ todo, handleStatus }) => {
     return (
-        <div>
+        <div >
 
            {/* {todo} */}
 

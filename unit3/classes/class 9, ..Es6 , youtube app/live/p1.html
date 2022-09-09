@@ -1,48 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<body>
-    <input type="text" id="searchTerm" placeholder="Search Video">
-    <button onclick="searchVideo()" >search button</button>
+  <body>
+    <input type="text" id="searchTerm" placeholder="Search Video" />
+    <button onclick="searchVideo()">search button</button>
 
     <div id="searchResults"></div>
 
     <script>
+      let API_KEY = "AIzaSyDjQMNtpb52drt3zDkimwyIjbRbZUJ-2Bc";
+      let searchResultsDiv = document.getElementById("searchResults");
 
-        let API_KEY="AIzaSyDjQMNtpb52drt3zDkimwyIjbRbZUJ-2Bc"
-        let searchResultsDiv=document.getElementById("searchResults")
-     
-
-        async function getdata() {
+      async function getdata() {
         //  try{
 
         //  }
-         let res = await fetch("https://www.googleapis.com/youtube/v3/search?key=${API_KEY}");
-         let data= await res.json()
-          console.log(data);
-     }
-     getdata()
-</script>
-</body>
+        let res = await fetch(
+          "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a11c0c23-66c0-436c-9496-ce34fda8334e/1.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220908%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220908T084004Z&X-Amz-Expires=86400&X-Amz-Signature=8a516b48e2a44b819426b9daa9966c2f116732557b9ba0e0430b3c432753f48a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22data.json%22&x-id=GetObject"
+        );
+        let data = await res.json();
+        console.log(data);
+      }
+
+      getdata();
+    </script>
+  </body>
 </html>
+
+<!-- ////////////************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************** -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" id="searchTerm" placeholder="Search Video" />
+    <button onclick="searchVideo()">search button</button>
+
+    <div id="searchResults"></div>
+
+    <script>
+      let API_KEY = "AIzaSyDjQMNtpb52drt3zDkimwyIjbRbZUJ-2Bc";
+      let searchResultsDiv = document.getElementById("searchResults");
+
+      async function getdata() {
+        //  try{
+
+        //  }
+        let res = await fetch(
+          "https://www.googleapis.com/youtube/v3/search?key=${API_KEY}"
+        );
+        let data = await res.json();
+        console.log(data);
+      }
+      getdata();
+    </script>
+  </body>
+</html> -->

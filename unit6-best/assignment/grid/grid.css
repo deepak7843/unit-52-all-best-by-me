@@ -1,0 +1,102 @@
+
+.container > div{
+    display: flex;
+}
+
+.mynav{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    /* height: 800px; */
+    /* border: 2px solid black; */
+}
+.myself{
+    width: 50%;
+    padding: 10px;
+    border: 2px solid red;
+    height: 680px;
+    background-color: rgb(245,226,214);
+
+}
+
+.imgdiv{
+    width: 50%;
+    border: 2px solid orange;
+    height: 700px;
+}
+
+.img2div{
+    width: 50%;
+}
+
+.img1{
+    width: 100%;
+    height:100%;
+    /* border: 2px solid green; */
+
+}
+.img3{
+    /* width: 25%; */
+    width: 60px;
+    height: 60px;
+    /* border: 2px solid green; */
+    justify-content: center;
+    padding-left: 100px
+
+}
+.logo{
+    width: 100%;
+    height:100%;
+    /* border: 2px solid green; */
+
+}
+
+.r1{
+    /* display: flex; */
+    justify-content: space-between;
+}
+.r2{
+    /* display: flex; */
+    justify-content: space-between;
+}
+.r3{
+    /* display: flex; */
+    /* justify-content: space-between;
+     */
+     
+}
+
+.r3 > div {
+    /* width: 25%; */
+}
+
+.btn{
+    border-radius: 40px;
+}
+
+.mybelow{
+    padding-top:-500px;
+}
+
+.inphone{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img2{
+    width: 100%;
+}
+
+.done{
+    border: 1px solid black;
+    width: 50%;
+}
+
+.skills{
+    text-align:left;
+    padding: left -100px;
+}
+
+.map{
+    justify-content: center;
+}
