@@ -1,40 +1,40 @@
 function runProgram(input) {
   input = input.trim().split("\n");
-
   let [n, m] = input[0].trim().split(" ").map(Number);
   let line = 1;
   let mat = [];
   for (let i = 0; i < n; i++) {
-    let ar = input[line++].trim().split(" ").map(Number);
-    mat.push(ar);
+    let d = input[line].trim().split(" ").map(Number);
+    line++;
+    mat.push(d);
   }
-
   check(n, m, mat);
 }
 
+
 function check(n, m, mat) {
-  // console.log(n,m,mat)
-  let c = 0;
+  let count = 0;
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < m; j++) {
-      // console.log(mat[-1][3])
-      // console.log(  "hjk--***", mat[-1][0])
-
       if (mat[i][j] == 0) {
-        // console.log(i, j);
-
-        if (trap(n, m, mat, i, j)) {
-          c++;
+        if (trap(i, j, mat, n, m)) {
+          count++;
         }
       }
     }
   }
-
-  console.log(c);
+  console.log(count);
 }
 
-function trap(n, m, mat, i, j) {
-  let start = true;
+
+
+
+
+
+
+
+function trap(i, j, mat, n, m) {
+  let flag = true;
   if (i == 0 && j == 0) {
     if (mat[i + 1][j] != 1 || mat[i][j + 1] != 1) {
       return false;
@@ -45,46 +45,44 @@ function trap(n, m, mat, i, j) {
         return false;
       }
     } else {
-      if (mat[i + 1][j] != 1 || mat[i][j - 1] != 1 || mat[i][j + 1] != 1) {
+      if (mat[i][j + 1] != 1 || mat[i + 1][j] != 1 || mat[i][j - 1] != 1) {
         return false;
       }
     }
   } else if (i != 0 && j == 0) {
     if (i == n - 1) {
-      if (mat[i - 1][j] != 1 || mat[i][j + 1] != 1) {
+      if (mat[i][j + 1] != 1 || mat[i - 1][j] != 1) {
         return false;
-      } 
-    }else {
-        if (mat[i - 1][j] != 1 || mat[i + 1][j] != 1 || mat[i][j + 1] != 1) {
-          return false;
-        }
       }
-    
+    } else {
+      if (mat[i][j + 1] != 1 || mat[i + 1][j] != 1 || mat[i - 1][j] != 1) {
+        return false;
+      }
+    }
   } else {
     if (i == n - 1 && j == m - 1) {
-      if (mat[i - 1][j] != 1 || mat[i][j - 1] != 1) {
+      if (mat[i][j - 1] != 1 || mat[i - 1][j] != 1) {
         return false;
       }
     } else if (i == n - 1 && j != m - 1) {
-      if (mat[i][j - 1] != 1 || mat[i][j + 1] != 1 || mat[i - 1][j] != 1) {
+      if (mat[i][j - 1] != 1 || mat[i - 1][j] != 1 || mat[i][j + 1] != 1) {
         return false;
       }
     } else if (i != n - 1 && j == m - 1) {
-      if (mat[i - 1][j] != 1 || mat[i + 1][j] != 1 || mat[i][j - 1] != 1) {
+      if (mat[i][j - 1] != 1 || mat[i + 1][j] != 1 || mat[i - 1][j] != 1) {
         return false;
       }
     } else {
       if (
-        mat[i - 1][j] != 1 ||
-        mat[i + 1][j] != 1 ||
+        mat[i][j + 1] != 1 ||
         mat[i][j - 1] != 1 ||
-        mat[i][j + 1] != 1
+        mat[i + 1][j] != 1 ||
+        mat[i - 1][j] != 1
       ) {
         return false;
       }
     }
   }
-
   return true;
 }
 

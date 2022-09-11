@@ -34,54 +34,47 @@ function check(n, m, mat) {
 }
 
 function trap(n, m, mat, i, j) {
-  let start = true;
   if (i == 0 && j == 0) {
-    if (mat[i + 1][j] != 1 || mat[i][j + 1] != 1) {
-      return false;
-    }
-  } else if (i == 0 && j != 0) {
+    if (mat[i + 1][j] != 1 || mat[i][j + 1] != 1) return false;
+  } 
+  else if (i == 0 && j != 0) {
     if (j == m - 1) {
-      if (mat[i + 1][j] != 1 || mat[i][j - 1] != 1) {
+      if (mat[i + 1][j] != 1 || mat[i][j - 1] != 1) return false;
+    } 
+    else {
+      if (mat[i + 1][j] != 1 || mat[i][j - 1] != 1 || mat[i][j + 1] != 1)
         return false;
-      }
-    } else {
-      if (mat[i + 1][j] != 1 || mat[i][j - 1] != 1 || mat[i][j + 1] != 1) {
-        return false;
-      }
     }
-  } else if (i != 0 && j == 0) {
+  } 
+  else if (i != 0 && j == 0) {
     if (i == n - 1) {
-      if (mat[i - 1][j] != 1 || mat[i][j + 1] != 1) {
+      if (mat[i - 1][j] != 1 || mat[i][j + 1] != 1) return false;
+    }
+     else {
+      if (mat[i - 1][j] != 1 || mat[i + 1][j] != 1 || mat[i][j + 1] != 1)
         return false;
-      } 
-    }else {
-        if (mat[i - 1][j] != 1 || mat[i + 1][j] != 1 || mat[i][j + 1] != 1) {
-          return false;
-        }
-      }
-    
-  } else {
+    }
+  } 
+  else {
     if (i == n - 1 && j == m - 1) {
-      if (mat[i - 1][j] != 1 || mat[i][j - 1] != 1) {
+      if (mat[i - 1][j] != 1 || mat[i][j - 1] != 1) return false;
+    } 
+    else if (i == n - 1 && j != m - 1) {
+      if (mat[i][j - 1] != 1 || mat[i][j + 1] != 1 || mat[i - 1][j] != 1)
         return false;
-      }
-    } else if (i == n - 1 && j != m - 1) {
-      if (mat[i][j - 1] != 1 || mat[i][j + 1] != 1 || mat[i - 1][j] != 1) {
+    } 
+    else if (i != n - 1 && j == m - 1) {
+      if (mat[i - 1][j] != 1 || mat[i + 1][j] != 1 || mat[i][j - 1] != 1)
         return false;
-      }
-    } else if (i != n - 1 && j == m - 1) {
-      if (mat[i - 1][j] != 1 || mat[i + 1][j] != 1 || mat[i][j - 1] != 1) {
-        return false;
-      }
-    } else {
+    } 
+    else {
       if (
         mat[i - 1][j] != 1 ||
         mat[i + 1][j] != 1 ||
         mat[i][j - 1] != 1 ||
         mat[i][j + 1] != 1
-      ) {
+      )
         return false;
-      }
     }
   }
 

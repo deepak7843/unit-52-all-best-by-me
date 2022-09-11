@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+
+    // Javascript program to count number of zeros
+    // surrounded by 1
+    var Row = 4;
+    var Col = 5;
+    var r = [ 0, 0, 1, -1 ];
+    var c = [ 1, -1, 0, 0 ];
+    
+    function isSafe(x, y, M)
+    {
+        if (x >= 0 && x < Row && y >= 0 &&
+            y < Col && M[x][y] == 0)
+            return true;
+        return false;
+    }
+    
+    // DFS function to mark all reachable cells from
+    // (x, y)
+    function DFS(x, y, M)
+    {
+        // make it's visited
+        M[x][y] = 1;
+        for (var k = 0; k < 4; k++)
+            if (isSafe(x + r[k], y + c[k], M))
+                DFS(x + r[k], y + c[k], M);
+    }
+    
+    // function return count of 0's which are surrounded by 1
+    function CountAllZero(M)
+    {
+        // first we remove all zeros which are not
+        // surrounded by 1 that means we only remove
+        // those zeros which are reachable from
+        // any boundary of given matrix.
+        for (var i = 0; i < Col; i++)
+            if (M[0][i] == 0)
+                DFS(0, i, M);
+        for (var i = 0; i < Col; i++)
+            if (M[Row - 1][i] == 0)
+                DFS(Row - 1, i, M);
+        for (var i = 0; i < Row; i++)
+            if (M[i][0] == 0)
+                DFS(i, 0, M);
+        for (var i = 0; i < Row; i++)
+            if (M[i][Col - 1] == 0)
+                DFS(i, Col - 1, M);
+    
+        // count all zeros which are surrounded by 1
+        var result = 0;
+        for (var i = 0; i < Row; i++)
+            for (var j = 0; j < Col; j++)
+                if (M[i][j] == 0)
+                    result++;
+        return result;
+    }
+    
+    // driver program to test above function
+    var M = [ [ 1, 1, 1, 0, 1 ],
+                    [ 1, 0, 0, 1, 0 ],
+                    [ 1, 0, 1, 0, 1 ],
+                    [ 0, 1, 1, 1, 1 ] ];
+    document.write( CountAllZero(M));
+    
+    </script>
+    
