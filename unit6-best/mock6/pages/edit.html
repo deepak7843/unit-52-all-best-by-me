@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta price="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+.edit{
+    border: 1px solid red
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="edit" >
+
+        <p id="price" >  </p>
+
+        <input type="text" placeholder="edit price "  id="price" >
+        <button onClick="editfun()" >update price </button>
+
+    </div>
+</body>
+</html>
+
+<script>
+
+
+async function editfun() {
+    console.log("dsd");
+    let id =  localStorage.getItem("edit");
+
+    let price = document.getElementById("price").value;
+  
+    let res = await fetch(`https://mock6-dsd.herokuapp.com/cars/${id}`, {
+      method: "PATCH",
+    //   body: JSON.stringify(data),
+      body: JSON.stringify({"price": price}),
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+    .then(res=> console.log(res) )
+    .catch(err=> console.error(err))
+
+    alert("edit done")
+  }
+</script>
+
+

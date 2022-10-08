@@ -10,12 +10,12 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate(); ////  2-1-48
   const location = useLocation(); //// 2-14-28
-  console.log("location--", location);
+  // console.log("location--", location);
 
+  console.log("location---inside login page", location);
 
   const comingfrom = location.state?.from?.pathname || "/";  //// 2-16-55
 
-  console.log("inside login page", location);
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .table {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      table {
+        border: 1px solid red;
+        width: 70vw;
+        /* margin: auto; */
+        text-align: center;
+      }
+
+      thead {
+        height: 40px;
+        background-color: teal;
+      }
+
+      tbody > tr {
+        height: 30px;
+        background-color: gray;
+      }
+      td {
+        padding: 5px 10px;
+        font-size: 20px;
+        width: 100px;
+        height: 100px;
+      }
+      .utility {
+        width: 70vw;
+        height: 100px;
+        border: 1px solid red;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 400px;
+      }
+      .search > input {
+        border-radius: 5px;
+        padding: 5px 10px;
+        width: 300px;
+        height: 40px;
+      }
+      .utility > div > select {
+        width: 150px;
+        height: 40px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      img {
+        width: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div id="container">
+   
+
+      <div class="utility">
+        <div class="search" id="search">
+          <input type="text" placeholder="search any employes name" />
+        </div>
+
+
+        <div class="sort">
+          <select name="" id="select"  onclick="filterByCategory()"" >
+            <option>Sort By Salary</option>
+            <option value="lh">Low to High</option>
+            <option value="hl">High to Low</option>
+          </select>
+        </div>
+
+
+        <!-- <div class="filter" id="filter">
+          <select name="" id="select"  onChange="filterByCategory()" >
+            <option value=""> ---</option>
+                 <option value="Training">Training</option>
+                <option value="Product Management">Product Management</option>
+                <option value="Services">Services</option>
+                <option value="Support">Support</option>
+          </select>
+        </div> -->
+
+
+          
+        <div>
+          <h3>Filter By Department</h3>
+          <select placeholder="Filter By Category " id="category" onclick="filterByCategory()">
+              <option value="Training">Training</option>
+              <option value="Product Management">Product Management</option>
+              <option value="Services">Services</option>
+              <option value="Support">Support</option>
+          </select>
+      </div>
+
+      </div>
+
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th>sr.No.</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Gender</th>
+              <th>Salery</th>
+            </tr>
+          </thead>
+          <tbody id="bodyTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  import navbar from "./components/navbar.js";
+
+  document.getElementById("nav").innerHTML = navbar();
+</script>
+
+<script>
+  let data;
+  async function show() {
+    data = await fetch(
+      `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees`
+    );
+
+    data = await data.json();
+
+    let res = data.data;
+    mapTable(res);
+
+    console.log("dsd--", res);
+    //  let emp=data.data
+  }
+
+  show();
+
+</script>
+
+<script>
+
+  document.getElementById("select").addEventListener("change", mySort);
+  function mySort(e) {
+    var sortedData = data.sort((a, b) => a.salary - b.salarys);
+    mapTable(sortedData);
+    // console.log(e.target.value, "sort");
+  }
+
+  function mapTable(data) {
+    // console.log(data, "hello");
+    document.getElementById("bodyTable").innerHTML = "";
+    for (let i = 0; i < 10; i++) {
+      var tr = document.createElement("tr");
+
+      var td1 = document.createElement("td");
+      td1.innerText = `${data[i].id}`;
+
+      var td2 = document.createElement("td");
+      var td2Img = document.createElement("img");
+      td2Img.setAttribute(
+        "src",
+        "https://www.tamus.edu/academic/wp-content/uploads/sites/24/2021/04/img-person-placeholder.jpg"
+      );
+
+      var td3 = document.createElement("td");
+      td3.innerText = `${data[i].name}`;
+
+      var td4 = document.createElement("td");
+      td4.innerText = `${data[i].department}`;
+
+      var td5 = document.createElement("td");
+      td5.innerText = `${data[i].gender}`;
+
+      var td6 = document.createElement("td");
+      td6.innerText = `${data[i].salary}`;
+      td2.append(td2Img);
+      tr.append(td1, td2, td3, td4, td5, td6);
+      tr.append(td6);
+      document.getElementById("bodyTable").append(tr);
+    }
+  }
+
+
+
+
+
+function filterByCategory(){
+     
+     var suggestion=[]
+     var query=document.querySelector("#category").value
+     if (query === "") {
+         suggestion=[]
+       } else {
+         let newListOfSuggestions = res
+           .filter((item) =>
+             item.department===query ? true : false
+           )
+           .map((item) => item);
+           suggestion=newListOfSuggestions;
+           
+       }
+       if(suggestion.length!==0 && query !== "")
+       {
+         
+        mapTable(suggestion)
+       }
+ 
+   }
+
+
+</script>

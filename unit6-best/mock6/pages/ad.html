@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+
+    <link rel="stylesheet" href="../css/ad.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="nav"></div>
+
+    <div class="topform">
+      <form id="registerForm">
+        <select id="selectBrand">
+          <option value="" aria-required="true">Select Brand</option>
+
+          <!-- <option value="Tata ALTROZ">Tata ALTROZ  </option>
+            <option value="Maruti Swift">Maruti Swift</option> -->
+
+          <option value="Tata">Tata</option>
+          <option value="Maruti">Maruti</option>
+          <option value="Honda">Honda</option>
+          <option value="Scorpio">Scorpio</option>
+          <option value="Mahindra">Mahindra</option>
+        </select>
+
+        <select id="select_Type">
+          <option value="">Select Type</option>
+          <option value="Manual">Manual</option>
+          <option value="AMT">AMT</option>
+        </select>
+
+        <select id="select_year">
+          <option value="" aria-required="">Select Year of Purchase</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+        </select>
+
+        <label for="driven">driven</label>
+        <input
+          required
+          type="text"
+          placeholder="Enter KM Driven "
+          id="driven"
+        />
+
+        <label for="Description">Description</label>
+        <input
+          
+          type="text"
+          placeholder="Description"
+          id="Description"
+        />
+
+        <label for="Price">Price</label>
+        <input type="text" placeholder="Enter  Price" id="Price" required />
+
+        <button type="submit" id="submit">Submit Form</button>
+      </form>
+    </div>
+
+    <div class="my_otp1">
+      <div style="display: flex" class="divinp" >
+        <input type="text" id="inp1" maxlength="1" />
+        <input type="text" id="inp2" maxlength="1" />
+        <input type="text" id="inp3" maxlength="1" />
+        <input type="text" id="inp4" maxlength="1" />
+      </div>
+
+      <button id="my_otp" > Submit </button>
+
+    </div>
+
+  </body>
+</html>
+
+<script type="module">
+  import navbar from "../components/navbar.js";
+  document.getElementById("nav").innerHTML = navbar();
+</script>
+
+<script src="../js/ad.js"></script>

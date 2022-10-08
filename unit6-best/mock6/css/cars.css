@@ -1,0 +1,46 @@
+img {
+    height: 200px;
+    width: 330px;
+  }
+
+  #container {
+    margin-top:80px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .carfilt {
+    margin-top: 64px;
+    padding: top 5px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    background-color: aqua;
+  }
+
+  /* .r1, .r2 {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    gap: 30px;
+
+  } */
+
+  .r1 {
+    display: flex;
+    /* justify-content: space-between; */
+    /* text-align: center; */
+    gap: 30px;
+
+  }
+  .r2 {
+    border: 1px solid black;
+    display: flex;
+    /* justify-content: space-between; */
+    /* text-align: center; */
+    gap: 30px;
+
+  }

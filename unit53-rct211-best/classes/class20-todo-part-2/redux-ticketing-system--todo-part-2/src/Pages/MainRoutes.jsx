@@ -38,6 +38,9 @@ const MainRoutes = () => {
 
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+
+      <Route path="*" element={<h1> page not found </h1>} />
+
     </Routes>
   );
 };

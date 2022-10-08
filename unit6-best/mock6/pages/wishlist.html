@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css" />
+
+    <title>Document</title>
+
+
+
+    <style>
+        img {
+          height: 200px;
+          width: 330px;
+        }
+  
+        #container {
+            /* border: 1px solid red; */
+            margin-top:100px;
+          display: grid;
+          gap: 25px;
+          grid-template-columns: repeat(4, 1fr);
+        }
+      </style>
+
+</head>
+<body>
+    <div id="nav"></div>
+
+    <br>
+
+    <div id="container"></div>
+
+    
+</body>
+</html>
+
+<script type="module">
+  
+    import navbar from "../components/navbar.js";
+    document.getElementById("nav").innerHTML = navbar();
+
+
+</script>
+
+
+<script>
+    
+    const getData = async () => {
+    try {
+      let res = await fetch(`https://mock6-dsd.herokuapp.com/wishlisted_cars`);
+
+      let data = await res.json();
+      console.log("73", data);
+      ar = data;
+      return "return 75", data;
+    } catch (err) {}
+  };
+
+  getData();
+
+  let data3;
+
+  async function showData() {
+    data3 = await getData();
+
+    console.log("data3--", data3);
+    append(data3);
+  }
+  showData();
+
+  const append = (data) => {
+    let container = document.querySelector("#container");
+    container.innerHTML = null; ///// important
+
+    data.map((el) => {
+      var card = document.createElement("div");
+
+      var image = document.createElement("img");
+
+      image.setAttribute(
+        "src",
+        "https://carwow-uk-wp-3.imgix.net/Volvo-XC40-white-scaled.jpg?auto=format&cs=tinysrgb&fit=clip&ixlib=rb-1.1.0&q=10&w=800"
+      );
+
+      var year = document.createElement("p");
+      year.innerText = el.year;
+
+      var brand = document.createElement("p");
+      brand.innerText = el.brand;
+
+      var type = document.createElement("p");
+      type.innerText = el.type;
+
+      var kms = document.createElement("p");
+      kms.innerText = el.kms;
+
+      var Price = document.createElement("p");
+      Price.innerText = el.Price;
+
+      var Description = document.createElement("p");
+      Description.innerText = el.Description;
+
+      let btn2 = document.createElement("button");
+      btn2.innerText = "Edit";
+      btn2.addEventListener("click", function () {
+        localStorage.setItem("edit", el.id);
+
+        window.location.href = "edit.html";
+
+        // editfun();
+      });
+
+      let wish = document.createElement("button");
+      wish.innerText = "Wishlist";
+      wish.addEventListener("click", async function () {
+        try {
+          var wish_data = {
+            brand: el.brand,
+            type: el.type,
+            year: el.year,
+            kms: el.kms,
+            Description: el.Description,
+            price: el.price,
+          };
+          wish_data = JSON.stringify(wish_data);
+          console.log("wish_data", wish_data);
+        } catch (error) {
+          console.log("error", error);
+        }
+
+        let reg_api = ` https://mock6-dsd.herokuapp.com/wishlisted_cars`;
+        let response = await fetch(reg_api, {
+          method: "POST",
+          body: wish_data,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        let data = await response.json();
+        console.log("data", data);
+
+        alert("successfully added in wish_list");
+
+        // window.location.href = "wishlist.html";
+      });
+
+      ///////////////////////////////////////
+
+      let btn = document.createElement("button");
+      btn.innerText = "Delete";
+
+      btn.addEventListener("click", async function myDelete() {
+        let reg_api = ` https://mock6-dsd.herokuapp.com/wishlisted_cars/${el.id}`;
+        let response = await fetch(reg_api, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        let data = await response.json();
+        console.log("data", data);
+
+        alert("successfully Deleted");
+
+        showData();
+      });
+
+      card.append(
+        image,
+        year,
+        brand,
+        type,
+        kms,
+        Price,
+        Description,
+        btn,
+        btn2,
+        wish
+      );
+
+      container.append(card);
+    });
+  };
+    
+</script>

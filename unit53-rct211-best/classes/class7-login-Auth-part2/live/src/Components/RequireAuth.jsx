@@ -6,14 +6,22 @@ import { useLocation, Navigate } from "react-router-dom";
 
 const RequireAuth = ({ children }) => {
 
+
+    //   //// 2-8-44
+    //   <RequireAuth>
+    //   <EditBook />
+    // </RequireAuth>
+    ////
+    ////   children in this case is  <EditBook/> component itself
+
   console.log("children--", children);
   const isAuth = useSelector((state) => state.AuthReducer.isAuth);
   console.log("isAuth--", isAuth);
 
   const location = useLocation(); /// 2-13-42
-  console.log("inside Required Auth", location);
+  console.log("location---inside Require Auth", location);
   // console.log("location--", location);
-
+       
   if (!isAuth) {
     //// 2-8-20
     // return <Navigate to="/login" />;

@@ -1,0 +1,28 @@
+*{
+    background-color: rgb(80, 120, 156);
+}
+
+#container{
+    display: flex;
+    justify-content:space-around;
+    margin: 200px;
+}
+
+.btn{
+    font-size: 35px;
+    background-color: aqua;
+    /* padding: 100px ; */
+    color: red;
+    border-radius: 20px;
+}
+
+  
+  .home {
+    /* widh */
+    font-size: 25px;
+    font-weight: bold;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 5rem 3rem;
+  }
+  

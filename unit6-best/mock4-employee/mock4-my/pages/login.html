@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: flex;
+        }
+        #main > div{
+            flex: 1;
+        }
+        form{
+            width: 20%;
+        }
+        .navcon{
+            height: 70px;
+            background-color: rgb(55, 147, 53);
+            display:flex;
+            justify-content:space-between;
+        }
+        .right{
+            display: flex; 
+            
+        }
+        a{
+            text-decoration: none;
+            font-size:35px;
+            color:white;
+            font-weight:bold;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav"></div>
+    <div id="main">
+        <div>
+
+            <h1>Login</h1>
+            <form  >
+               
+               User Name: <input type="text" id="username_login">
+               Password: <input type="password" id="password_login">
+               <input type="submit">
+            </form>
+        </div>
+    </div>
+    </body>
+</html>
+
+<script type="module">
+// import navbar from "./components/navbar.js"
+
+// document.getElementById("nav").innerHTML = navbar();
+
+document.querySelector("form").addEventListener("submit",  async function Login(e){
+
+e.preventDefault();
+let name = document.getElementById("username_login").value
+localStorage.setItem("username",name)
+
+var login_data = {
+username: name,
+password: document.getElementById("password_login").value,
+}
+login_data = JSON.stringify(login_data);
+console.log("login_data",login_data);
+
+let log_api = `https://masai-api-mocker.herokuapp.com/auth/login`;
+let response = await fetch(log_api,{
+method: "POST",
+headers: {
+  "Content-Type": "application/json",
+},
+body: login_data,
+
+});
+let data1 = await response.json();
+console.log("data", data1);
+localStorage.setItem("token", data1.token)
+
+// alert(`Welcome ${name}`)
+window.location.href = '../index.html';
+
+
+}
+)
+
+</script>

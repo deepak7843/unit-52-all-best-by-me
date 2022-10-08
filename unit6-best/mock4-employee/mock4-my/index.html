@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/navbar.css" />
+
+    <title>Document</title>
+
+    <style>
+      #card {
+        background-color: rgb(114, 132, 152);
+        padding: 30px;
+        margin-top: 15px;
+        border: 5px solid red;
+        width: 300px;
+        margin-left: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="nav"></div>
+
+    <div id="card">
+      <div class="card">
+        <h1 id="name"></h1>
+        <p id="email"></p>
+        <p id="usermane"></p>
+        <p id="mobile"></p>
+        <p id="description"></p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  
+  import navbar from "./components/navbar.js";
+  document.getElementById("nav").innerHTML = navbar();
+
+  var token = localStorage.getItem("token");
+  var username = localStorage.getItem("username");
+
+  let reg_api = `https://masai-api-mocker.herokuapp.com/user/${username}`;
+  let response = await fetch(reg_api, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    // body: register_data,
+  });
+
+  let data = await response.json();
+  console.log("data", data);
+
+  document.querySelector("#name").innerHTML = data.name;
+  document.querySelector("#email").innerHTML = data.email;
+  document.querySelector("#usermane").innerHTML = data.username;
+  document.querySelector("#mobile").innerHTML = data.mobile;
+  document.querySelector("#description").innerHTML = data.description;
+</script>

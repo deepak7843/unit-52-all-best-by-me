@@ -132,6 +132,8 @@ const FilterSort = () => {
         </div>
       </div>
 
+
+
       <h3>Sort</h3>
       <div onChange={handleSort}>
         <input

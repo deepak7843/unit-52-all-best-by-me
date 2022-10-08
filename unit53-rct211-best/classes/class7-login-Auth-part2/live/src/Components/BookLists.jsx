@@ -12,7 +12,11 @@ import { Link, useLocation, useSearchParams } from "react-router-dom";
 const BookLists = () => {
   const books = useSelector((state) => state.AppReducer.books);
   const dispatch = useDispatch();
+
+  console.log(useSearchParams);
+  console.log(useSearchParams());
   const [searchParams] = useSearchParams();
+  console.log(searchParams);
 
   
   const location = useLocation(); /// 29-37

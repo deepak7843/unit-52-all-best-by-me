@@ -42,24 +42,24 @@ function gsub(nar, ar, index, n) {
 //////
 //////
 
-// function gs(nst, st, n1, ind) {
-//   if (nst.length !== 0) {
-//     console.log(nst);
-//   }
-//   if (ind == n1) {
-//     return;
-//   }
-//   for (let i = ind; i < n1; i++) {
-//     nst += st[i];
-//     gs(nst, st, n1, i + 1);
-//     nst = nst.slice(0, nst.length - 1);
-//   }
-// }
-// let st = "abc",
-//   n1 = 3;
-// let nst = "",
-//   ind = 0;
-// gs(nst, st, n1, ind);
+function gs(nst, st, n1, ind) {
+  if (nst.length !== 0) {
+    console.log(nst);
+  }
+  if (ind == n1) {
+    return;
+  }
+  for (let i = ind; i < n1; i++) {
+    nst += st[i];
+    gs(nst, st, n1, i + 1);
+    nst = nst.slice(0, nst.length - 1);
+  }
+}
+let st = "abc",
+  n1 = 3;
+let nst = "",
+  ind = 0;
+gs(nst, st, n1, ind);
 
 //////
 //////

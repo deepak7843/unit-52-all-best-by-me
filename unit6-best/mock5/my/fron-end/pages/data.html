@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      img {
+        height: 200px;
+      }
+
+      #container {
+        display: grid;
+        gap: 25px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="">Filter by Batch</label>
+
+      <select name="" id="batchfilter" onChange="myfilter()">
+        <option value="">----</option>
+        <option value="WEB-10">WEB-10</option>
+        <option value="WEB-11">WEB-11</option>
+        <option value="WEB-12">WEB-12</option>
+        <option value="WEB-13">WEB-13</option>
+        <option value="WEB-14">WEB-14</option>
+      </select>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <!-- ///////////////////   sort by age //////////////////////////////////////////////////////////////////////////////// -->
+
+      <label for=""> sort by age</label>
+
+      <select name="" id="sort" onChange="mysort()">
+        <option value="">-----</option>
+        <option value="desc">Desc</option>
+        <option value="asc">Asc</option>
+      </select>
+
+      <br />
+      <br />
+      <br />
+
+      <!-- ///////////////////   search code //////////////////////////////////////////////////////////////////////////////// -->
+
+      <input type="text" placeholder="" id="mysearch" onChange=" searchfun()" />
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  const getData = async () => {
+    try {
+      let res = await fetch(`https://dsd-new-server.herokuapp.com/users`);
+
+      let data = await res.json();
+      console.log("73", data);
+      ar = data;
+      return "return 75", data;
+    } catch (err) {}
+  };
+
+  getData();
+
+  let data3;
+
+  async function showData() {
+    data3 = await getData();
+
+    console.log("data3--", data3);
+    append(data3);
+  }
+  showData();
+
+  const append = (data) => {
+    let container = document.querySelector("#container");
+    container.innerHTML = null; ///// important
+
+    data.map((el) => {
+      var card = document.createElement("div");
+
+      var image = document.createElement("img");
+
+      image.setAttribute(
+        "src",
+        "https://i.pinimg.com/564x/6b/aa/98/6baa98cc1c3f4d76e989701746e322dd.jpg"
+      );
+
+      var place = document.createElement("p");
+      place.innerText = el.place;
+
+      var prof = document.createElement("p");
+      prof.innerText = el.profession;
+
+      var name = document.createElement("h1");
+      name.innerText = el.name;
+
+      var age = document.createElement("p");
+      age.innerText = el.age;
+
+      var batch = document.createElement("p");
+      batch.innerText = el.batch_name;
+
+      let btn2 = document.createElement("button");
+      btn2.innerText = "Edit";
+      btn2.addEventListener("click", function () {
+        localStorage.setItem("edit", el.id);
+        
+        window.location.href = "edit.html"
+
+        // editfun();
+      });
+
+      let btn = document.createElement("button");
+      btn.innerText = "Delete";
+
+      btn.addEventListener("click", async function myDelete() {
+        let reg_api = ` https://dsd-new-server.herokuapp.com/users/${el.id}`;
+        let response = await fetch(reg_api, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        let data = await response.json();
+        console.log("data", data);
+
+        alert("successfully Deleted");
+
+        showData();
+      });
+
+      card.append(image, name, age, batch, place, prof, btn, btn2);
+
+      container.append(card);
+    });
+  };
+
+  // function main() {
+  //   let inputData = document.querySelector(".search").value;
+  //   if (inputData === "") {
+  //     append(ar);
+  //     return;
+  //   }
+  //   let arr = [];
+  //   ar.filter((el) => {
+  //     if (el.name.toLowerCase().includes(inputData) && inputData.length > 0) {
+  //       arr.push(el);
+  //     }
+  //   });
+  //   append(arr);
+  // }
+
+
+
+
+  async function myfilter() {
+    // var suggestData = [];
+    try {
+      var query = document.querySelector("#batchfilter").value;
+
+      let res = await fetch(
+        ` https://dsd-new-server.herokuapp.com/users?batch_name=${query} `
+      );
+
+      let data = await res.json();
+      console.log("filter", data);
+      append(data);
+    } catch {
+      console.log("e", e);
+    }
+  }
+
+  async function mysort() {
+    let a = document.getElementById("sort").value;
+
+    try {
+      let res = await fetch(
+        `https://dsd-new-server.herokuapp.com/users?_sort=age&_order=${a}`
+      );
+
+      let data = await res.json();
+      console.log(data);
+      append(data);
+    } catch (e) {
+      console.log("ltoh", e);
+    }
+  }
+
+  async function searchfun() {
+    let a = document.getElementById("mysearch").value;
+
+    try {
+      let res = await fetch(
+        `https://dsd-new-server.herokuapp.com/users?name=${a}`
+      );
+
+      let data = await res.json();
+      console.log(data);
+      append(data);
+    } catch (e) {
+      console.log("ltoh", e);
+    }
+  }
+</script>

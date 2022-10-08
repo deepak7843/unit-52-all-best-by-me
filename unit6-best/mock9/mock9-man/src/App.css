@@ -1,0 +1,21 @@
+.navbar {
+  background-color: teal;
+  display: flex;
+  gap: 40px;
+  padding: 16px;
+  color: white;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.otpBorder {
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 18px;
+}

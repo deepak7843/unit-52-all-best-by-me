@@ -411,6 +411,7 @@ function displayData(data) {
 
     let companyBox = document.createElement("div");
     companyBox.setAttribute("class", "companyBox");
+
     let company = document.createElement("p");
     company.textContent = ele.company;
 
@@ -418,6 +419,7 @@ function displayData(data) {
 
     let positionBox = document.createElement("div");
     positionBox.setAttribute("class", "positionBox");
+    
     let position = document.createElement("h2");
     position.textContent = ele.position;
 

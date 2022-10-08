@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Form</title>
+    <link rel="stylesheet" href="../css/user.css" />
+  </head>
+  <body>
+    <h1> please Fill  Form</h1>
+
+
+    <div class="topform">
+      <form id="registerForm" >
+
+        <label for="name">Name</label>
+        <input required type="text" placeholder="Enter Your name" id="name" />
+
+        <label for="age">Age</label>
+        <input required type="text" placeholder="Enter Your Age" id="age" />
+
+        <label for="Place">place</label>
+        <input type="text" placeholder="Enter  Place" id="place" required />
+
+
+        <select id="selectBatch">
+          <option value="" aria-required="true">Enter Batch</option>
+          <option value="WEB-13">WEB-10</option>
+          <option value="WEB-14">WEB-11</option>
+          <option value="WEB-15">WEB-12</option>
+          <option value="WEB-16">WEB-13</option>
+          <option value="WEB-16">WEB-14</option>
+        </select>
+
+        <select id="select_your_profession">
+          <option value="">Enter your Profession</option>
+          <option value="FSD">FSD</option>
+          <option value="Frontend">Frontend</option>
+          <option value="Backend">Backend</option>
+          <option value="Student">Student</option>
+        </select>
+
+          <button type="submit" id="submit">Submit Form</button>
+
+      </form>
+    </div>
+
+
+
+  </body>
+</html>
+
+<script src="../js/user.js"></script>
