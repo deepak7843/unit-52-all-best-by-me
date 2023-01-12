@@ -1,0 +1,14 @@
+{
+    "hotels" : [
+        {
+          "category": "family",
+          "image_url": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "type_of_room": "family room",
+          "bed_type": "One Bed",
+              "no_of_persons":"4",
+              "capacity":"max capacity 3",
+              "cost":" 4000/night",
+              "booked":false
+        }
+      ]
+}

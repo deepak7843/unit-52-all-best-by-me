@@ -1,0 +1,37 @@
+
+
+ export const GET_QUESTIONS_REQUEST = "GET_QUESTIONS_REQUEST"
+ export const GET_QUESTIONS_SUCCESS = "GET_QUESTIONS_SUCCESS"
+ export const GET_QUESTIONS_FAILURE = "GET_QUESTIONS_FAILURE"
+
+ 
+
+ export const SET_QUIZ_REQUEST = "SET_QUIZ_REQUEST";
+ export const SET_QUIZ_SUCCESS = "SET_QUIZ_SUCCESS";
+ export const SET_QUIZ_FAILURE = "SET_QUIZ_FAILURE";
+ 
+ export const GET_QUIZ_REQUEST = "GET_QUIZ_REQUEST";
+ export const GET_QUIZ_SUCCESS = "GET_QUIZ_SUCCESS";
+ export const GET_QUIZ_FAILURE = "GET_QUIZ_FAILURE";
+ 
+
+ 
+export const DELETE_CART_ITEM = "DELETE_CART_ITEM";
+
+export const FILTER_TYPE = "FILTER_TYPE";
+
+export const SORT_ASC_RATING = "SORT_ASC_RATING";
+
+export const SORT_DESC_RATING = "SORT_DESC_RATING";
+
+export const SORT_ASC_PRICE = "SORT_ASC_PRICE";
+
+export const SORT_DESC_PRICE = "SORT_DESC_PRICE";
+
+export const NEXT_PAGE = "NEXT_PAGE";
+
+export const PREV_PAGE = "PREV_PAGE";
+
+export const FILTER_SORT = "FILTER_SORT";
+
+export const FILTER_PAGINATION = "FILTER_PAGINATION";

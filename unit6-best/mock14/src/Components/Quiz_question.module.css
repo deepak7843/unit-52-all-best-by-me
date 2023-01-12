@@ -1,0 +1,32 @@
+.main{
+    text-align: left;
+    border: 3px solid rgb(184, 84, 84);
+    
+    /* padding-bottom: 18px; */
+    padding:25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 700px;
+    background-color: #6859D1
+ 
+}
+.main h2{
+    color: white;
+    font-size: larger;
+    font-weight: 700;
+}
+.main Button{
+    width: 100%;
+    margin-top: 25px;
+    color: white;
+    /* gap: 10px; */
+}
+.main Button:hover{
+    color: rgb(156, 88, 88);
+}
+.no{
+    border: 1px solid;
+    padding:3px;
+    /* top: 0; */
+    /* margin-top:-24px; */
+}
